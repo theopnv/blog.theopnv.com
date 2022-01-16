@@ -1,0 +1,8 @@
+baseURL: "http://blog.theopnv.com"
+languageCode: "en-us"
+title: "Blog"
+
+module:
+  imports:
+    path: github.com/victoriadrake/hugo-theme-memex
+    disable: false
