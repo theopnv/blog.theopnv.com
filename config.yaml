@@ -1,5 +1,5 @@
 baseURL: "https://blog.theopnv.com"
-title: Blog
+title: Blog - theopnv.com
 paginate: 5
 theme: PaperMod
 
@@ -39,14 +39,14 @@ params:
   showtoc: false
   tocopen: false
 
-  assets:
-    # disableHLJS: true # to disable highlight.js
-    # disableFingerprinting: true
-    favicon: "/static/favicon.ico"
-    favicon16x16: "/static/favicon.ico"
-    favicon32x32: "/static/favicon.ico"
-    apple_touch_icon: "/static/favicon.ico"
-    safari_pinned_tab: "/static/favicon.ico"
+  #assets:
+  #  # disableHLJS: true # to disable highlight.js
+  #  # disableFingerprinting: true
+  #  favicon: "public/favicon.ico"
+  #  favicon16x16: "favicon.ico"
+  #  favicon32x32: "favicon.ico"
+  #  apple_touch_icon: "favicon.ico"
+  #  safari_pinned_tab: "favicon.ico"
 
   label:
     text: "Blog"
