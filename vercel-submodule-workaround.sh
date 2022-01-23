@@ -1,5 +1,5 @@
 # github submodule repo address without https:// prefix
-SUBMODULE_GITHUB=https://github.com/theo-pnv/content.git
+SUBMODULE_GITHUB=github.com/theo-pnv/content.git
 
 # .gitmodules submodule path
 SUBMODULE_PATH=content
