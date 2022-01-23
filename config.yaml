@@ -8,7 +8,7 @@ buildDrafts: false
 buildFuture: false
 buildExpired: false
 
-#googleAnalytics: UA-123-45
+#googleAnalytics: 300441130
 
 minify:
   disableXML: true
@@ -21,7 +21,7 @@ params:
   keywords: [Blog, Portfolio, PaperMod]
   author: "Theo Penavaire"
   # author: ["Me", "You"] # multiple authors
-  images: ["<link or path of image for opengraph, twitter-cards>"]
+  images: ["/static/preview.png"]
   DateFormat: "January 2, 2006"
   defaultTheme: auto # dark, light
   disableThemeToggle: false
@@ -42,11 +42,11 @@ params:
   assets:
     # disableHLJS: true # to disable highlight.js
     # disableFingerprinting: true
-    favicon: "<link / abs url>"
-    favicon16x16: "<link / abs url>"
-    favicon32x32: "<link / abs url>"
-    apple_touch_icon: "<link / abs url>"
-    safari_pinned_tab: "<link / abs url>"
+    favicon: "/static/favicon.ico"
+    favicon16x16: "/static/favicon.ico"
+    favicon32x32: "/static/favicon.ico"
+    apple_touch_icon: "/static/favicon.ico"
+    safari_pinned_tab: "/static/favicon.ico"
 
   label:
     text: "Blog"
@@ -73,13 +73,13 @@ params:
   #  Title: "Hi there \U0001F44B"
   #  Content: Welcome to my blog
 
-  analytics:
-    google:
-      SiteVerificationTag: "XYZabc"
-    bing:
-      SiteVerificationTag: "XYZabc"
-    yandex:
-      SiteVerificationTag: "XYZabc"
+  #analytics:
+  #  google:
+  #    SiteVerificationTag: "XYZabc"
+  #  bing:
+  #    SiteVerificationTag: "XYZabc"
+  #  yandex:
+  #    SiteVerificationTag: "XYZabc"
 
   cover:
     hidden: true # hide everywhere but not in structured data
@@ -91,22 +91,24 @@ params:
   #  Text: "Suggest Changes" # edit text
   #  appendFilePath: true # to append file path to Edit link
 
-  # for search
-  # https://fusejs.io/api/options.html
-  fuseOpts:
-    isCaseSensitive: false
-    shouldSort: true
-    location: 0
-    distance: 1000
-    threshold: 0.4
-    minMatchCharLength: 0
-    keys: ["title", "permalink", "summary", "content"]
+  ## for search
+  ## https://fusejs.io/api/options.html
+  #fuseOpts:
+  #  isCaseSensitive: false
+  #  shouldSort: true
+  #  location: 0
+  #  distance: 1000
+  #  threshold: 0.4
+  #  minMatchCharLength: 0
+  #  keys: ["title", "permalink", "summary", "content"]
+  #outputs:
+  #  home:
+  #    - HTML
+  #    - RSS
+  #    - JSON # is necessary
+
 menu:
   main:
-    - identifier: archives
-      name: archives
-      url: /archives/
-      weight: 10
     - identifier: categories
       name: categories
       url: /categories/
@@ -118,4 +120,4 @@ menu:
     - identifier: about
       name: about
       url: https://theopnv.com/
-      weight: 40
+      weight: 50
