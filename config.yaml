@@ -1,6 +1,5 @@
 baseURL: "https://blog.theopnv.com"
 title: Blog - theopnv.com
-paginate: 5
 theme: PaperMod
 
 enableRobotsTXT: true
@@ -13,6 +12,9 @@ buildExpired: false
 minify:
   disableXML: true
   minifyOutput: true
+
+pagination:
+  pagerSize: 5
 
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
