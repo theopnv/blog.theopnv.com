@@ -22,7 +22,6 @@ params:
   description: "Theo Penavaire's blog"
   keywords: [Blog, Portfolio, PaperMod]
   author: "Theo Penavaire"
-  # author: ["Me", "You"] # multiple authors
   images: ["/static/preview.png"]
   DateFormat: "January 2, 2006"
   defaultTheme: auto # dark, light
