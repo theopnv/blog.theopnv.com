@@ -40,73 +40,17 @@ params:
   showtoc: false
   tocopen: false
 
-  #assets:
-  #  # disableHLJS: true # to disable highlight.js
-  #  # disableFingerprinting: true
-  #  favicon: "public/favicon.ico"
-  #  favicon16x16: "favicon.ico"
-  #  favicon32x32: "favicon.ico"
-  #  apple_touch_icon: "favicon.ico"
-  #  safari_pinned_tab: "favicon.ico"
-
   label:
     text: "Blog"
-    #icon: /apple-touch-icon.png
-    #iconHeight: 35
-
-  ## profile-mode
-  #profileMode:
-  #  enabled: false # needs to be explicitly set
-  #  title: ExampleSite
-  #  subtitle: "This is subtitle"
-  #  imageUrl: "<img location>"
-  #  imageWidth: 120
-  #  imageHeight: 120
-  #  imageTitle: my image
-  #  buttons:
-  #    - name: Posts
-  #      url: posts
-  #    - name: Tags
-  #      url: tags
-
-  ## home-info mode
-  #homeInfoParams:
-  #  Title: "Hi there \U0001F44B"
-  #  Content: Welcome to my blog
 
   #analytics:
   #  google:
-  #    SiteVerificationTag: "XYZabc"
-  #  bing:
-  #    SiteVerificationTag: "XYZabc"
-  #  yandex:
   #    SiteVerificationTag: "XYZabc"
 
   cover:
     hidden: true # hide everywhere but not in structured data
     hiddenInList: false # hide on list pages and home
     hiddenInSingle: false # hide on single page
-
-  #editPost:
-  #  URL: "https://github.com/<path_to_repo>/content"
-  #  Text: "Suggest Changes" # edit text
-  #  appendFilePath: true # to append file path to Edit link
-
-  ## for search
-  ## https://fusejs.io/api/options.html
-  #fuseOpts:
-  #  isCaseSensitive: false
-  #  shouldSort: true
-  #  location: 0
-  #  distance: 1000
-  #  threshold: 0.4
-  #  minMatchCharLength: 0
-  #  keys: ["title", "permalink", "summary", "content"]
-  #outputs:
-  #  home:
-  #    - HTML
-  #    - RSS
-  #    - JSON # is necessary
 
 menu:
   main:
@@ -122,3 +66,20 @@ menu:
       name: about
       url: https://theopnv.com/
       weight: 50
+
+defaultContentLanguage: en
+defaultContentLanguageInSubdir: false
+disableDefaultLanguageRedirect: false
+outputs:
+  home:
+  - html
+  - rss
+  section:
+  - html
+  - rss
+  taxonomy:
+  - html
+  - rss
+  term:
+  - html
+  - rss
