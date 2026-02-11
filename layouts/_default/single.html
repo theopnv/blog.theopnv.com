@@ -56,8 +56,12 @@
         {{- partial "share_icons.html" . -}}
         {{- end }}
     </footer>
-    {{- if (.Param "newsletter") }}
-    {{- partial "newsletter.html" . -}}
+    {{- if (.Param "newsletterEn") }}
+    {{- partial "newsletter.en.html" . -}}
+    {{- end }}
+
+    {{- if (.Param "newsletterFr") }}
+    {{- partial "newsletter.fr.html" . -}}
     {{- end }}
 
     {{- if (.Param "comments") }}

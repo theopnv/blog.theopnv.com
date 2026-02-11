@@ -55,31 +55,25 @@ params:
 menu:
   main:
     - identifier: categories
-      name: categories
+      name: Categories
       url: /categories/
       weight: 20
     - identifier: tags
-      name: tags
+      name: Tags
       url: /tags/
       weight: 30
     - identifier: about
-      name: about
+      name: About
       url: https://theopnv.com/
       weight: 50
 
 defaultContentLanguage: en
 defaultContentLanguageInSubdir: false
 disableDefaultLanguageRedirect: false
-outputs:
-  home:
-  - html
-  - rss
-  section:
-  - html
-  - rss
-  taxonomy:
-  - html
-  - rss
-  term:
-  - html
-  - rss
+languages:
+  fr:
+    languageCode: fr-FR
+    languageName: Français
+  en:
+    languageCode: en-US
+    languageName: English
