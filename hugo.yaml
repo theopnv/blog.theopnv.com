@@ -54,6 +54,10 @@ params:
 
 menu:
   main:
+    - identifier: newsletter
+      name: Newsletter
+      pageRef: newsletter
+      weight: 10
     - identifier: categories
       name: Categories
       url: /categories/

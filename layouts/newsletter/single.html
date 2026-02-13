@@ -1,0 +1,31 @@
+{{- define "main" }}
+
+<article class="post-single">
+    <header class="post-header">
+        {{ partial "breadcrumbs.html" . }}
+        <h1 class="post-title entry-hint-parent">
+            {{ .Title }}
+        </h1>
+        {{- if .Description }}
+        <div class="post-description">
+            {{ .Description }}
+        </div>
+        {{- end }}
+    </header>
+
+    {{- if .Content }}
+    <div class="post-content">
+        {{- if not (.Param "disableAnchoredHeadings") }}
+        {{- partial "anchored_headings.html" .Content -}}
+        {{- else }}{{ .Content }}{{ end }}
+    </div>
+    {{- end }}
+
+    {{- if eq .Site.Language.Lang "fr" }}
+    {{- partial "newsletter.fr.html" . -}}
+    {{- else }}
+    {{- partial "newsletter.en.html" . -}}
+    {{- end }}
+</article>
+
+{{- end }}{{/* end main */}}
