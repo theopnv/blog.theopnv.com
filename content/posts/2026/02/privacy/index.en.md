@@ -1,5 +1,5 @@
 ---
-title: "Surveillance 2.0 : when privacy becomes a luxury"
+title: "Surveillance 2.0: when privacy becomes a luxury"
 date: 2026-02-06T00:00:00+00:00
 tags: ["Privacy", "Web"]
 categories: ["Privacy"]
