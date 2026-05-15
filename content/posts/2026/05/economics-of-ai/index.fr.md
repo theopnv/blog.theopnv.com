@@ -1,5 +1,5 @@
 ---
-title: "Jobpocalypse: concevoir des systèmes économiques à l'ère de l'IA"
+title: "Jobpocalypse: quels systèmes économiques à l'ère de l'IA ?"
 date: 2026-05-14T00:00:00+00:00
 tags: ["AI", "Economics"]
 categories: ["AI"]
