@@ -1,5 +1,5 @@
 ---
-title: "Step-by-step: Building a Node.js server (2021 edition) — Part 4/4 - Testing"
+title: "Building a Node.js Server — Part 4/4: Testing"
 date: 2020-11-29T04:30:03+00:00
 # weight: 1
 # aliases: ["/first"]
@@ -12,7 +12,7 @@ TocOpen: false
 draft: false
 hidemeta: false
 comments: false
-description: "Building a Node.js server step by step"
+description: "Part 4/4: test the Koa.js, GraphQL, and MongoDB server with Mocha and Chai, using an in-memory MongoDB instance to keep tests fast and isolated."
 #canonicalURL: "https://canonical.url/to/page"
 disableShare: false
 disableHLJS: false
@@ -22,7 +22,7 @@ ShowReadingTime: true
 ShowBreadCrumbs: true
 ShowPostNavLinks: true
 cover:
-    image: "posts/nodejs-server-04/images/cover.png" # image path/url
+    image: "images/cover.png" # image path/url
     alt: "Cover" # alt text
     relative: true # when using page bundles set this to true
 ---
@@ -33,7 +33,7 @@ In [Part I](../nodejs-server-01) to [III](../nodejs-server-03) we built a generi
 
 Requirements: Understanding why testing is important (😉).
 
-# ☕ Mocha Setup
+## ☕ Mocha Setup
 
 [Mocha](https://mochajs.org/) is a javascript test runner. We will use it to test both our graphQL resolvers and database accessors, to ensure the server is responding as we expect. We also have to add an assertion library, because Mocha does not have one bundled. We will use [Chai](https://www.chaijs.com/), as it’s very popular and there’s plenty tutorial/resources available for learning it.
 
@@ -56,7 +56,7 @@ We need to use ts-node to transpile typescript into javascript mocha can read.
 
 We also want to exclude the `test` folder from the docker copy and typescript compilation. This means adding test to the excluded folders section of `tsconfig.json` and to the list in `.dockerignore`.
 
-# Writing the tests
+## Writing the tests
 
 Mongo-memory-server is super useful to quickly set up a temporary database that will only live in the host’s RAM during the tests. Create a `test/TestDatabaseManager.ts` file and copy/paste the following code:
 
@@ -93,7 +93,7 @@ Regarding the actual tests, we’d like to connect to the test database before r
 
 The ideal architecture would be to split tests into multiple files and still be able to benefit from the hooks and access the common variables in each one of the files:
 
-![](images/architecture.png)
+![Diagram of test files sharing common hooks and variables across multiple test suites](images/architecture.png)
 
 Let’s create a file (corresponding to the red one above) called `test/all_db.test.ts` and add the following code:
 
@@ -237,7 +237,7 @@ it("get a valid user", async () => {
 
 Now we can run `npm run test` and see our tests running 😎.
 
-![](images/tests/png)
+![Terminal output showing all Mocha tests passing](images/tests.png)
 
 That’s it! We covered many topics in these articles, and we now have a generic foundation that can easily be extended to meet any need. 🥳
 

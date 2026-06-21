@@ -19,7 +19,7 @@ ShowBreadCrumbs: true
 ShowPostNavLinks: true
 newsletterFr: true
 cover:
-    image: "posts/2026/04/privacy/images/jason-bourne.jpg"
+    image: "images/jason-bourne.jpg"
     alt: "Comme Jason Bourne, devenez insaisissable"
     relative: true
 ---
@@ -73,7 +73,7 @@ C'est peut-être impensable au sein du cadre juridique et légal aujourd'hui, ma
 Que faire, donc, pour réduire la valeur du profil utilisateur construit via nos échanges avec l'IA ?
 Éviter à tout prix de partager tous les éléments de sa vie, d'autant plus si ce que l'on gagne en retour est limité. Je me souviens du trend instagram du "starter pack" (dans lequel je suis tombé), qui consistait à se décrire soi-même à l'IA pour lui demander de générer son "starter pack" avant de pouvoir le partager sur les réseaux sociaux. L'interêt ? Quelques minutes de dopamine au moment de partager la photo finale. Les bénéfices pour Open AI ou Google ? Mettre la main sur encore plus de données, pour renforcer la valeur de votre profil qu'ils vendent à d'autres.
 
-![](./images/start-pack.jpg)
+![Trois images générées par IA façon 'figurine starter pack', une tendance où l'on décrit son profil à l'IA pour générer un portrait façon emballage de jouet](./images/start-pack.jpg)
 
 Dans bien des cas il est souhaitable de simplement se passer d'IA. Mais pour les cas les plus poussés, l'IA reste une technologie qu'il devient difficile de laisser de côté. Pour ceux-ci il existe plusieurs IA, certes possiblement un peu moins performantes mais qui promettent plus de confidentialité à leurs utilisateurs. Je ne les ai pas tous essayé, mais voilà quelques exemples:
 - https://duck.ai/
@@ -96,7 +96,7 @@ Pour l'inspiration, voici quelques changements que j'ai effectué :
 
 Utilisez [ce site](https://european-alternatives.eu/) pour trouver d'autres alternatives européennes aux solutions Big Tech. Ces solutions pairent souvent souveraineté avec respect des droits privés. Pour les plus experts d'entre vous, le subreddit [r/degoogle](https://www.reddit.com/r/degoogle/) regorge également d'idées.
 
-![](./images/degoogle.png)
+![Collage de logos d'applications et services alternatifs superposés à un logo Google délavé, représentant des remplaçants respectueux de la vie privée face à la Big Tech](./images/degoogle.png)
 
 Beaucoup de ces solutions proposent des formules gratuites, dont on arrive néanmoins rapidement aux limites. Mais il me paraît important d'accepter de payer quelques euros par mois pour ces services qui ne font pas de la vente de mes données leur business model. Souvent ces plus petites solutions font tout pour jouer des coudes avec les plus gros acteurs, et ils chouchoutent leurs clients. Les fonctionnalités sortent beaucoup plus rapidement. On a vraiment l'impression de gagner au change et l'on s'attache à ces produits plus facilement. L'équivalent de passer du fast-food à une cuisine plus locale, saine et source de bonheur.
 Enfin, la plupart ont des services de migration des données, qui facilitent la transition depuis les solutions des grandes entreprises tech. Bien sûr il vaut mieux prendre son temps et faire ces transitions étape par étape, pour avoir le temps de s'habituer à chacune. 
@@ -122,7 +122,7 @@ Au lieu de donner toujours votre même adresse e-mail très personnelle à une m
 - Sans parler de piratage, certaines entreprises n'hésitent pas à vendre vos données à des courtiers. Vous saurez lesquelles lorsque vous verrez également du spam arriver sur un alias spécifique.
 - Enfin, séparer son identité numérique entre une multitude d'alias complique le profilage par les trackers lorsque vous naviguez sur plusieurs sites ou applications.
 
-![](./images/alias.png)
+![Schéma montrant des alias e-mail pour différents services redirigeant vers une adresse réelle, l'un des alias étant désactivé après une fuite](./images/alias.png)
 
 Une analogie dans la vraie vie : donner l'adresse d'une boîte aux lettres en ville plutôt que celle de sa résidence personnelle. En réalité pas grand monde ne fait ça, car (heureusement) il y a peu de raisons à cette abondance de précaution et confidentialité, et maintenir une boîte aux lettres coûte cher.
 Sur internet en revanche il y a moins d'excuses, car le pouvoir de nuisance potentiel des spammeurs est bien plus grand (vous inonder d'e-mails de phishing, qui leur coûte 0€) et car maintenir un alias est gratuit.

@@ -18,16 +18,17 @@ disableShare: false
 disableHLJS: false
 hideSummary: false
 searchHidden: true
+robotsNoIndex: true
 ShowReadingTime: true
 ShowBreadCrumbs: true
 ShowPostNavLinks: true
 cover:
-    image: "posts/git-101/images/cover.png" # image path/url
+    image: "images/cover.png" # image path/url
     alt: "Git logo" # alt text
     relative: true # when using page bundles set this to true
 ---
 
-# How to use Git in a project?
+## How to use Git in a project?
 
 I had the opportunity to prepare a presentation of Git and thought it would be great to share it to whoever wants to use it in a project.
 
@@ -42,4 +43,4 @@ It targets beginners (no knowledge is required). It explains the process pipelin
 
 It is available here : [Link](https://drive.proton.me/urls/CFAYMP9JXR#i8EtOUl55MWk)
 
-![](images/meme.jpg)
+![Success Kid meme captioned "I hated Git, now I hate it less"](images/meme.jpg)

@@ -20,10 +20,18 @@ params:
   description: "Theo Penavaire's blog"
   keywords: [Blog, Portfolio, PaperMod]
   author: "Theo Penavaire"
-  images: ["/static/preview.png"]
+  images: ["/preview.png"]
   DateFormat: "January 2, 2006"
   defaultTheme: auto # dark, light
   disableThemeToggle: false
+
+  assets:
+    favicon: "/preview.png" # used as Organization/publisher logo in schema.org JSON-LD
+
+  schema:
+    sameAs:
+      - "https://github.com/theo-pnv"
+      - "https://theopnv.com/"
 
   ShowReadingTime: true
   ShowShareButtons: true
@@ -73,6 +81,12 @@ languages:
   fr:
     languageCode: fr-FR
     languageName: Français
+    params:
+      footer:
+        text: "Écrit par [Theo Penavaire](/fr/about/)."
   en:
     languageCode: en-US
     languageName: English
+    params:
+      footer:
+        text: "Written by [Theo Penavaire](/about/)."

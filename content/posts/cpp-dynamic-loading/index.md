@@ -22,12 +22,10 @@ ShowReadingTime: true
 ShowBreadCrumbs: true
 ShowPostNavLinks: true
 cover:
-    image: "posts/cpp-dynamic-loading/images/cover.jpeg" # image path/url
+    image: "images/cover.jpeg" # image path/url
     alt: "Tatooine" # alt text
     relative: true # when using page bundles set this to true
 ---
-
-# Loading of a C++ class from a shared library (Modern C++)
 
 To go to the Github repository, [click here](https://github.com/theo-pnv/Dynamic-Loading).
 

@@ -22,12 +22,10 @@ ShowReadingTime: true
 ShowBreadCrumbs: true
 ShowPostNavLinks: true
 cover:
-    image: "posts/xfce/desktop.png" # image path/url
+    image: "desktop.png" # image path/url
     alt: "XFCE Desktop" # alt text
     relative: true # when using page bundles set this to true
 ---
-
-# A modern and lightweight Arch-Linux (xfce) configuration
 
 I’m currently working on an Arch Linux distribution. What I love about it is the huge amount of Sys Admin stuff I learned while installing it again and again, each time faster than before, and with a better knowledge of what I was doing. I’m not going to explain how to install it, but rather present some packages I use to customize the default system.
 

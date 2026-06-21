@@ -20,12 +20,10 @@ ShowReadingTime: true
 ShowBreadCrumbs: true
 ShowPostNavLinks: true
 cover:
-    image: "posts/deepin/images/desktop.png" # image path/url
+    image: "images/desktop.png" # image path/url
     alt: "DDE 15.4 Desktop" # alt text
     relative: true # when using page bundles set this to true
 ---
-
-# Que vaut Deepin Desktop Environment (15.4) ?
 
 Après 2 ans de vie commune avec Linux, je commençais à désespérer de trouver un environnement graphique un minimum “sexy”. J’avais plus ou moins réussi à rendre attrayant XFCE, mais j’ai depuis entendu parler de [Deepin Desktop Environment](https://www.deepin.org/en/dde/) (DDE pour les intimes). Je me suis donc lancé dans son installation, sur une base Arch linux.
 

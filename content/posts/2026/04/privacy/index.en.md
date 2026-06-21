@@ -19,7 +19,7 @@ ShowBreadCrumbs: true
 ShowPostNavLinks: true
 newsletterEn: true
 cover:
-    image: "posts/2026/04/privacy/images/jason-bourne.jpg"
+    image: "images/jason-bourne.jpg"
     alt: "Like Jason Bourne, become unreachable"
     relative: true
 ---
@@ -75,7 +75,7 @@ It may be unthinkable within the current legal framework today, but it is not un
 So, what to do to reduce the value of the user profile built through our exchanges with AI?
 Avoid at all costs sharing all the elements of your life, especially if what you gain in return is limited. I remember the Instagram trend of the "starter pack" (which I fell for), which consisted of describing yourself to the AI to ask it to generate your "starter pack" before being able to share it on social networks. The interest? A few minutes of dopamine when sharing the final photo. The benefits for Open AI or Google? Getting their hands on even more data to enhance the value of your profile that they sell to others.
 
-![](./images/start-pack.jpg)
+![Three AI-generated "action figure" starter pack images, a social media trend where users describe themselves to AI to generate a toy-package portrait](./images/start-pack.jpg)
 
 In many cases, it is desirable to simply do without AI. But for the most advanced cases, AI remains a technology that is becoming difficult to set aside. For these, there are several chatbots, perhaps a bit less performant but promising more confidentiality to their users. I have not tried them all, but here are a few examples:
 - https://duck.ai/
@@ -98,7 +98,7 @@ For inspiration, here are some changes I have made:
 
 Use [this website](https://european-alternatives.eu/) to browse for more European Alternatives to Big Tech. The solutions are not always, but often respectful of personal rights. For the expert crowd, the [r/degoogle](https://www.reddit.com/r/degoogle/) subreddit provides a lot of good ideas as well.
 
-![](./images/degoogle.png)
+![Collage of alternative app and service logos overlaid on a faded Google logo, representing privacy-friendly replacements for Big Tech services](./images/degoogle.png)
 
 Many of these services offer free plans, although you quickly reach their limits. Still, I think it's important to be willing to pay a few euros a month for services that don't make selling my data their business model. Smaller providers often do everything they can to compete with the big players, and they pamper their customers. Features appear much faster. You really feel like you're getting a better deal and you form attachments to these products more easily. It's like switching from fast food to a more local, healthy, joy-giving cuisine.
 Finally, most have data migration services that facilitate the transition from the solutions of major tech companies. Of course, it is better to take your time and make these transitions step by step, to have time to get used to each one.
@@ -125,7 +125,7 @@ Instead of always giving the same very personal email address to a multitude of 
 - Without talking about hacking, some companies do not hesitate to sell your data to brokers. You will know which ones when you also see spam arriving on a specific alias.
 - Finally, separating your digital identity into a multitude of aliases complicates profiling by trackers when you browse multiple sites or applications.
 
-![](./images/alias.png)
+![Diagram showing email aliases for different services forwarding to a real address, with one alias deactivated after a leak](./images/alias.png)
 
 An analogy in real life: giving the address of a mailbox in the city rather than that of your personal residence. In reality, not many people do this, as (fortunately) there are few reasons for this abundance of precaution and confidentiality, and maintaining a mailbox is expensive.
 On the internet, however, there are fewer excuses, as the potential nuisance of spammers is much greater (they can flood you with phishing emails, which cost them $0) and maintaining an alias is free.

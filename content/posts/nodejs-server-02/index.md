@@ -1,5 +1,5 @@
 ---
-title: "Step-by-step: Building a Node.js server (2021 edition) — Part 2/4 - Docker"
+title: "Building a Node.js Server — Part 2/4: Docker"
 date: 2020-11-29T02:30:03+00:00
 # weight: 1
 # aliases: ["/first"]
@@ -12,7 +12,7 @@ TocOpen: false
 draft: false
 hidemeta: false
 comments: false
-description: "Building a Node.js server step by step"
+description: "Part 2/4: containerize the Node.js server and a MongoDB database with Docker and Docker Compose, then manage secrets with environment variables."
 #canonicalURL: "https://canonical.url/to/page"
 disableShare: false
 disableHLJS: false
@@ -22,7 +22,7 @@ ShowReadingTime: true
 ShowBreadCrumbs: true
 ShowPostNavLinks: true
 cover:
-    image: "posts/nodejs-server-02/images/cover.png" # image path/url
+    image: "images/cover.png" # image path/url
     alt: "Cover" # alt text
     relative: true # when using page bundles set this to true
 ---
@@ -35,7 +35,7 @@ So let’s [containerize](https://www.docker.com/) our apps, including the exist
 
 _Requirements: Knowing the basics of Docker and MongoDB. We won’t cover the installation of docker as it is OS-dependent and requires some specific tweaking for everyone. Please refer to the getting started and/or installation guide provided by Docker._
 
-# Robin level: dockerize the server
+## Robin level: dockerize the server
 
 With docker installed on your machine (see the requirements above), create the following Dockerfile:
 
@@ -75,7 +75,7 @@ docker run -p 3100:3100 -d <name>
 
 Go to `http://localhost:3100/health` and check that we still have a 200 — OK response.
 
-# Batman level: dockerize the whole back-end
+## Batman level: dockerize the whole back-end
 
 The benefit of using containers grows larger when our application is composed of many different services, like our back-end is. So let’s add a MongoDB service, in a container.
 
@@ -146,7 +146,7 @@ Things are only getting _slightly_ more complex from now, I promise. I recommend
 Here’s what it looks like:
 ![The back end architecture](images/architecture.png)
 
-## 🔐 A way to manage environment variables
+### 🔐 A way to manage environment variables
 
 How to set the variables mongo needs without hard-coding them in the docker-compose file and eventually push them to the repository remote and make them publicly available? We can use `.env` files!
 
@@ -175,7 +175,7 @@ Add this line to the `.gitignore` file if it’s not already there:
 .env
 ```
 
-## A script to initialize our database
+### A script to initialize our database
 
 Before storing and retrieving data with MongoDB, we need a database and a user to interact with it. This is done by adding an initialization script to a specific volume in docker (see line 18 of the docker-compose.yml file). Here is an example of a script adding a database and a user as named in the .env file. Feel free to tweak the script or to rewrite it. Mongo DB also supports javascript ([thread](https://stackoverflow.com/questions/42912755/how-to-create-a-db-for-mongodb-container-on-start-up)).
 
@@ -205,7 +205,7 @@ else
 fi
 ```
 
-## Final touches
+### Final touches
 
 Finally, add a .dockerignore file to avoid putting useless files in the containers:
 
@@ -245,7 +245,7 @@ _Note: it’s still possible to access the database container with a connectionS
 mongodb://your_username:your_password@localhost:27017/database?authSource=database
 ```
 
-## Injecting variables at runtime
+### Injecting variables at runtime
 
 Containers are great, but when developing it’s better to instantly see the changes we made to the code rather than rebuilding the containers and waiting for them to start.
 
@@ -277,4 +277,4 @@ npm run start
 Now our server and database are ready to talk to each other. 🕺🏻
 
 In part III, we will write some boilerplate code to set up GraphQL and MongoDB. Click the link below to go to part III:
-[Step-by-step: Building a Node.js server (2021 edition) — Part 3/4 — The API](../nodejs-server-03/)
+[Building a Node.js Server — Part 3/4: The API](../nodejs-server-03/)

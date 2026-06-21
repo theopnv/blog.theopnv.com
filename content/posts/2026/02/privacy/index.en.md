@@ -9,7 +9,7 @@ TocOpen: false
 draft: false
 hidemeta: false
 comments: false
-description: ""
+description: "Tech giants and governments are converging on mass surveillance, from Chat Control to AI-powered facial scans. Why privacy is becoming a luxury."
 disableShare: false
 disableHLJS: false
 hideSummary: false
@@ -19,7 +19,7 @@ ShowBreadCrumbs: true
 ShowPostNavLinks: true
 newsletterEn: true
 cover:
-    image: "posts/2026/02/privacy/images/cover.jpeg"
+    image: "images/cover.jpeg"
     alt: "Big Brother is watching you - 1984"
     relative: true
 ---
@@ -166,9 +166,9 @@ It is essential to educate people on these core issues, which receive far too li
 
 By denouncing the application of measures labeled “protective”, we are not siding with pedophiles, criminals, or terrorists. We are saying that we do not agree with the blanket application of anything under the pretext of fighting those. Rather than quick‑fix substitutes, we need to provide targeted, progressive, transparent, and scientifically grounded responses.
 
-I am also preparing an article on the solutions we can all adopt, at our own scale, to limit the damage. Stay tuned…!
+_Continue to [Part 2: a ghost's guide](../../04/privacy/index.en.md), with concrete solutions we can all adopt, at our own scale, to limit the damage._
 
-# References
+## References
 
 [^1]: One counterargument is that it would not be necessary to break the encryption to scan messages if this were done locally on the machine. This is theoretically possible, [but experts are very skeptical](https://www.eff.org/deeplinks/2019/11/why-adding-client-side-scanning-breaks-end-end-encryption) about its practical implementation and believe that, in the long term, there is a high probability that matching will be done on a remote server controlled by a third party. 
 

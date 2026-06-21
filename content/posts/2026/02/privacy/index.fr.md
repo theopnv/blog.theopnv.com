@@ -9,7 +9,7 @@ TocOpen: false
 draft: false
 hidemeta: false
 comments: false
-description: ""
+description: "Big Tech et gouvernements convergent vers la surveillance de masse, du Chat Control aux scans faciaux dopés à l'IA. Pourquoi la vie privée devient un luxe."
 disableShare: false
 disableHLJS: false
 hideSummary: false
@@ -19,7 +19,7 @@ ShowBreadCrumbs: true
 ShowPostNavLinks: true
 newsletterFr: true
 cover:
-    image: "posts/2026/02/privacy/images/cover.jpeg"
+    image: "images/cover.jpeg"
     alt: "Big Brother is watching you - 1984"
     relative: true
 ---
@@ -163,9 +163,9 @@ Il est indispensable d'éduquer sur ces sujets de fond, qui reçoivent trop peu 
 
 En dénonçant l'application de mesures désignées comme "de protection", il ne s'agit pas de se mettre du côté des pédophiles, des criminels ou des terroristes. Il s'agit de dire que l'on est pas d'accord pour l'application de tout et n'importe quoi au titre de ces combats. Plutôt que des demi-solutions erratiques à la va-vite, il s'agit d'apporter des réponses ciblées, progressives, transparentes et scientifiquement établies.
 
-Je prépare aussi un article sur les solutions que l'on peut adopter, à son échelle, pour limiter les dégâts. À suivre...!
+_Suite dans la [partie 2 : guide d'un fantôme](../../04/privacy/index.fr.md), avec des solutions concrètes que l'on peut adopter, à son échelle, pour limiter les dégâts._
 
-# Références
+## Références
 
 [^1]: Un contre-argument est qu'il ne serait pas nécessaire de briser le chiffrement pour effectuer un scan des messages, si celui-ci s'effectue en local, sur la machine. C'est en théorie possible, [mais les experts sont très douteux de la mise pratique](https://www.eff.org/deeplinks/2019/11/why-adding-client-side-scanning-breaks-end-end-encryption), et estiment qu'à terme il y ait de grandes chances pour que le matching se fasse sur un serveur distant contrôlé par un tiers. 
 
