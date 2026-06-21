@@ -22,12 +22,10 @@ ShowReadingTime: true
 ShowBreadCrumbs: true
 ShowPostNavLinks: true
 cover:
-    image: "posts/life-hacks/images/cover.jpeg" # image path/url
+    image: "images/cover.jpeg" # image path/url
     alt: "AI's take on 'Automating life'" # alt text
     relative: true # when using page bundles set this to true
 ---
-
-# Life automation engineering
 
 In recent years I've spent more and more time trying to continuously optimize my daily routine. Fixing the pain points, and improving my productivity. At the end of the day, it's all about freeing up more time and being able to focus more on what matters and what I like.
 

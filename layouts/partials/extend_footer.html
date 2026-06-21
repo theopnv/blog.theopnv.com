@@ -1,3 +1,5 @@
+{{- $showNewsletter := or .IsHome (eq .Type "newsletter") (.Param "newsletterEn") (.Param "newsletterFr") }}
+{{- if $showNewsletter }}
 <!-- START - We recommend to place the below code in footer or bottom of your website html  -->
 <script>
   window.REQUIRED_CODE_ERROR_MESSAGE = 'Please choose a country code';
@@ -29,3 +31,4 @@
 
 <!-- END - We recommend to place the above code in footer or bottom of your website html  -->
 <!-- End Brevo Form -->
+{{- end }}

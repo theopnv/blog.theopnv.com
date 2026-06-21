@@ -1,3 +1,5 @@
+{{- $showNewsletter := or .IsHome (eq .Type "newsletter") (.Param "newsletterEn") (.Param "newsletterFr") }}
+{{- if $showNewsletter }}
 <!-- Begin Brevo Form -->
 <!-- START - We recommend to place the below code in head tag of your website html  -->
 <style>
@@ -46,5 +48,50 @@
 </style>
 <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
 <!--  END - We recommend to place the above code in head tag of your website html -->
+{{- end }}
 
 <script defer src="https://cloud.umami.is/script.js" data-website-id="b532bf60-b3d8-482c-8f3a-5c031f8da466"></script>
+
+{{- if hugo.IsProduction | or (eq site.Params.env "production") }}
+{{- if .IsHome }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": {{ site.Title }},
+  "url": {{ site.Home.Permalink }},
+  "inLanguage": {{ .Language.Lang | default "en-us" }}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": {{ site.Params.author }},
+  "url": {{ "https://theopnv.com/" }},
+  "sameAs": [
+    {{- range $i, $e := site.Params.schema.sameAs }}{{ if $i }}, {{ end }}{{ trim $e " " }}{{ end }}
+  ]
+}
+</script>
+{{- end }}
+
+{{- if eq .Kind "term" }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": {{ .Title }},
+  "url": {{ .Permalink }},
+  "mainEntity": {
+    "@type": "ItemList",
+    "itemListElement": [
+      {{- range $i, $p := .Pages }}{{ if $i }},{{ end }}
+      {"@type": "ListItem", "position": {{ add $i 1 }}, "url": {{ $p.Permalink }}}
+      {{- end }}
+    ]
+  }
+}
+</script>
+{{- end }}
+{{- end }}

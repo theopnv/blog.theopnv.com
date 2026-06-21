@@ -1,5 +1,5 @@
 ---
-title: "Step-by-step: Building a Node.js server (2021 edition) — Part 3/4 - The API"
+title: "Building a Node.js Server — Part 3/4: The API"
 date: 2020-11-29T03:30:03+00:00
 # weight: 1
 # aliases: ["/first"]
@@ -12,7 +12,7 @@ TocOpen: false
 draft: false
 hidemeta: false
 comments: false
-description: "Building a Node.js server step by step"
+description: "Part 3/4: build a GraphQL API with Apollo Server and MongoDB, using GraphQL Code Generator to keep schema, types, and database models in sync."
 #canonicalURL: "https://canonical.url/to/page"
 disableShare: false
 disableHLJS: false
@@ -22,7 +22,7 @@ ShowReadingTime: true
 ShowBreadCrumbs: true
 ShowPostNavLinks: true
 cover:
-    image: "posts/nodejs-server-03/images/cover.png" # image path/url
+    image: "images/cover.png" # image path/url
     alt: "Cover" # alt text
     relative: true # when using page bundles set this to true
 ---
@@ -33,7 +33,7 @@ In [Part I](../nodejs-server-01) and [II](../nodejs-server-02) we didn’t write
 
 Requirements: Knowing the basics of [GraphQL (Apollo)](https://www.apollographql.com/docs/apollo-server/) and of the [MongoDB driver for NodeJS](https://docs.mongodb.com/drivers/node/current/).
 
-# GraphQL Code-Generator
+## GraphQL Code-Generator
 
 Let’s install the packages we need for this chapter all at once:
 
@@ -83,7 +83,7 @@ Add the `npm run codegen` command in the package.json file and run it to generat
 
 You may want to add the `src/generated` folder to the `.eslintignore` file.
 
-# Connect to the Apollo Server and Database instance
+## Connect to the Apollo Server and Database instance
 
 Now that we have our database and API types let’s take a break to see how we will build our server.
 
@@ -93,7 +93,7 @@ We will instantiate an ApolloServerManager, which will handle the GraphQL schema
 
 It can be a little bit difficult to visualize so let’s jump into the code!
 
-## Database managers
+### Database managers
 
 Create a `src/DatabaseManager.ts` file:
 
@@ -144,7 +144,7 @@ export { ADatabaseManager, AppDatabaseManager };
 1. We’re using the MongoDB driver for NodeJS to instantiate a MongoClient. The methods are pretty standard lifecycle methods, to start and stop the client. We can’t really connect to the client in the constructors because the connect() method is async. So we need to call a dedicated start() method manually.
 2. To build the connection string needed by MongoDB to connect to our database container, we’re using the environment variables we defined in the .env file.
 
-## Apollo Server manager
+### Apollo Server manager
 
 Time to write our GraphQL API.
 
@@ -291,7 +291,7 @@ export default ApolloServerManager;
 - Line 24, we’re instantiating the actual ApolloServer. We are passing it our schema, a context pre-populated by Koa, the datasources and an error handler callback.
 - Ideally we would add authentication and populate some loggedUser field in the context, but that’s out of this tutorial’s scope. See Apollo’s tutorial for how to do that.
 
-# Run our GraphQL and MongoDB powered back-end
+## Run our GraphQL and MongoDB powered back-end
 
 That was a lot. All that’s left to do is to instantiate an ApolloServerManager and an AppDatabaseManager in the `src/server.ts` file:
 
@@ -364,4 +364,4 @@ query User($name:String!) {
 Congrats, we’ve built a good base for the server of any business application. We’ve added many features and kept everything super generic, so you could in theory stop here, duplicate this starter for each new project and build on top of the very basic user API we built with GraphQL and MongoDB.
 
 If you’re interested in seeing how we can test the whole infrastructure, click the link below to head over to part IV! ⏩
-[Step-by-step: Building a Node.js server (2021 edition) — Part 4/4 — Testing](../nodejs-server-04/)
+[Building a Node.js Server — Part 4/4: Testing](../nodejs-server-04/)

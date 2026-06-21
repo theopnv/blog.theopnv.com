@@ -22,12 +22,10 @@ ShowReadingTime: true
 ShowBreadCrumbs: true
 ShowPostNavLinks: true
 cover:
-    image: "posts/vivatech/images/cover.png" # image path/url
+    image: "images/cover.png" # image path/url
     alt: "Vivatech Event Cover" # alt text
     relative: true # when using page bundles set this to true
 ---
-
-# Can Vivatechnology make Paris tech again?
 
 VivaTechnology is an event that takes place in Paris, every year in June, since 2016. Its main goal is to bring together the players in the Tech ecosystem. It brings together big groups – Orange, Airbus, Google, Microsoft, IBM and many more – as well as startups, contractors, and investors. There’s even a day where the public is welcomed. An opportunity for everyone to discover the latest innovations in multiple fields : energy, luxury, food, transports…
 

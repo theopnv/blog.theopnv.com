@@ -1,5 +1,5 @@
 ---
-title: "Step-by-step: Building a Node.js server (2021 edition) — Part 1/4"
+title: "Building a Node.js Server — Part 1/4"
 date: 2020-11-29T01:30:03+00:00
 # weight: 1
 # aliases: ["/first"]
@@ -12,7 +12,7 @@ TocOpen: false
 draft: false
 hidemeta: false
 comments: false
-description: "Building a Node.js server step by step"
+description: "Part 1/4: bootstrap a Node.js server with Koa.js and TypeScript, then add ESLint, Husky git hooks, and Nodemon for a clean development workflow."
 #canonicalURL: "https://canonical.url/to/page"
 disableShare: false
 disableHLJS: false
@@ -22,7 +22,7 @@ ShowReadingTime: true
 ShowBreadCrumbs: true
 ShowPostNavLinks: true
 cover:
-    image: "posts/nodejs-server-01/images/cover.png" # image path/url
+    image: "images/cover.png" # image path/url
     alt: "Cover" # alt text
     relative: true # when using page bundles set this to true
 ---
@@ -47,7 +47,7 @@ Using all these tools together will make our server starter generic enough to be
 
 _Some requirements: knowing the basics in javascript/typescript, using git and working with an IDE. The node version used for this tutorial is 15.0.1 and the npm version is 6.14.9._
 
-# Getting started: a Typescript-ready project
+## Getting started: a Typescript-ready project
 
 First things first, create a git repository, and run `npm init`. You can then safely remove the “main” and “scripts.test” entries from the package.json file, as we will rewrite them later.
 
@@ -91,7 +91,7 @@ Let’s add our first script to our `package.json`. We will now be able to build
 }
 ```
 
-# 🐨 Koa.js
+## 🐨 Koa.js
 
 But in order to compile something we need sources! Let’s create a basic Koa.js server. Run
 
@@ -135,11 +135,11 @@ It’s quite straightforward. By hovering on any object in your IDE you can see 
 
 Let’s try running `npm run build`, and then `node ./dist/server.js` to start the server. The `console.log()` call at line 10 should output the server’s URL. Browse `http://localhost:3100/health` to use our only route and verify that we have an “Ok” with a 200 HTTP response.
 
-# Some Quality of Life (QoL) tooling
+## Some Quality of Life (QoL) tooling
 
 From now on we’d like to ensure our code always meets some quality standards. Nicely formatted code = better readability, no irrelevant git changes like spaces and extra lines, and happier developers. Also, running `npm run build` and starting the server manually each time is not a great workflow. Let’s remediate to that.
 
-## 📃 Enforce the code convention
+### 📃 Enforce the code convention
 
 Let’s add eslint to our project. It will make sure the code convention is enforced. Run
 
@@ -192,7 +192,7 @@ We’re now ready to add another script to the package.json’s scripts section:
 
 Run `npm run lint` to automatically fix all fixable code convention errors and report the others.
 
-## Avoid pushing ill-formatted code to the remote
+### Avoid pushing ill-formatted code to the remote
 
 Wouldn’t it be nice if the linting job was run each time we committed some files, in order to make sure we only save clean code? Let’s add some git hooks. They are small scripts that trigger on specific git actions (commit, push…).
 
@@ -210,7 +210,7 @@ Now each time we git commit some files, typescript will complain if it can’t c
 
 _Note: As of writing (25/11/2020), [husky won’t install the hooks due to an issue with npm v7](https://github.com/typicode/husky/issues/788). Use npm v6 or use another way to install the hooks (e.g. https://pre-commit.com/)._
 
-## 🔄 Set up hot reload
+### 🔄 Set up hot reload
 
 Last but not least of our QoL improvements, we want to set up hot reload so that the server reloads automatically when we edit some code. Let’s install [nodemon](https://www.npmjs.com/package/nodemon):
 
@@ -241,4 +241,4 @@ Part 1? Done. We built a basic server that can handle HTTP routing, and we are r
 
 However we still need many other tools to provide features like an API (graphQL) that will allow accessing a database (MongoDB). Adding these tools will make the server hard to deploy, so containerization will also be useful. Click the link below to jump to part II to set these things up.
 
-[Step-by-step: Building a Node.js server (2021 edition) — Part 2/4 — Docker](../nodejs-server-02/)
+[Building a Node.js Server — Part 2/4: Docker](../nodejs-server-02/)
