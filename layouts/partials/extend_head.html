@@ -84,8 +84,8 @@
   "mainEntity": {
     "@type": "ItemList",
     "itemListElement": [
-      {{- range $i, $p := .Pages }}{{ if $i }},{{ end }}
-      {"@type": "ListItem", "position": {{ add $i 1 }}, "url": {{ $p.Permalink }}}
+      {{- range $i, $p := first 50 .Pages }}{{ if $i }},{{ end }}
+      {"@type": "ListItem", "position": {{ add $i 1 }}, "url": {{ $p.Permalink | jsonify }}}
       {{- end }}
     ]
   }
