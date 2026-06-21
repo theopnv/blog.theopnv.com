@@ -84,6 +84,7 @@ languages:
     params:
       footer:
         text: "Écrit par [Theo Penavaire](/fr/about/)."
+  en:
     languageCode: en-US
     languageName: English
     params:
