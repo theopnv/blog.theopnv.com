@@ -26,7 +26,7 @@
         {{- block "main" . }}{{ end }}
     </main>
     {{- $showNewsletter := or .IsHome (eq .Type "newsletter") (.Param "newsletterEn") (.Param "newsletterFr") }}
-    {{ partialCached "footer.html" . .Layout .Kind (.Param "hideFooter") (.Param "ShowCodeCopyButtons") $showNewsletter -}}
+    {{ partialCached "footer.html" . .Layout .Kind .Lang (.Param "hideFooter") (.Param "ShowCodeCopyButtons") $showNewsletter -}}
 </body>
 
 </html>
