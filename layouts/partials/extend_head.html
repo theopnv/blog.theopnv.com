@@ -67,11 +67,9 @@
 {
   "@context": "https://schema.org",
   "@type": "Person",
-  "name": {{ site.Params.author }},
-  "url": {{ "https://theopnv.com/" }},
-  "sameAs": [
-    {{- range $i, $e := site.Params.schema.sameAs }}{{ if $i }}, {{ end }}{{ trim $e " " }}{{ end }}
-  ]
+  "name": {{ site.Params.author | jsonify }},
+  "url": {{ "https://theopnv.com/" | jsonify }},
+  "sameAs": {{ site.Params.schema.sameAs | jsonify }}
 }
 </script>
 {{- end }}
