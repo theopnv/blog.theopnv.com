@@ -1,5 +1,5 @@
 ---
-title: "Loading of a C++ class from a shared library (Modern C++)"
+title: "Load a C++ class from a shared library (Modern C++)"
 date: 2018-02-26T11:30:03+00:00
 # weight: 1
 # aliases: ["/first"]

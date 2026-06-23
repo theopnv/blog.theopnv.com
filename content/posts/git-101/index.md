@@ -1,5 +1,5 @@
 ---
-title: "Learning Git - 101"
+title: "An intro to the git basics"
 date: 2018-10-09T11:30:03+00:00
 # weight: 1
 # aliases: ["/first"]

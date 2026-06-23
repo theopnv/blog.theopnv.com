@@ -1,9 +1,9 @@
 ---
-title: "Life automation engineering"
+title: "15 tips for putting your life on autopilot"
 date: 2022-12-22T11:30:03+00:00
 # weight: 1
 # aliases: ["/first"]
-tags: ["Life", "Productivity"]
+tags: ["Automation", "Productivity"]
 categories: ["Life"]
 author: "Theo Penavaire"
 # author: ["Me", "You"] # multiple authors

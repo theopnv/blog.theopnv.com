@@ -1,5 +1,5 @@
 ---
-title: "Surveillance 2.0: a ghost's guide"
+title: "Surveillance 2.0: how to become a ghost"
 date: 2026-04-14T00:00:00+00:00
 tags: ["Privacy", "Web"]
 categories: ["Privacy"]

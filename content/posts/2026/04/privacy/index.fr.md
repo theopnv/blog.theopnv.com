@@ -1,5 +1,5 @@
 ---
-title: "Surveillance 2.0 : le guide du fantôme"
+title: "Surveillance 2.0 : devenir un fantôme"
 date: 2026-04-14T00:00:00+00:00
 tags: ["Privacy", "Web"]
 categories: ["Privacy"]
