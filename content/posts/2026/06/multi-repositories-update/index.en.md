@@ -100,7 +100,7 @@ flowchart TD
 ## How this applies to you
 This workflow is entirely reproducible, with very few moving parts that can modular (just provide a `docs.md` with domain knowledge specific to the update you want to implement). Using AI agents here can save money and time by an order of magnitude. 
 
-But it's not a silver lining. It shifts the effort from implementing and writing code, to babysitting PRs with your own name on commits, and dealing with the operational overhead of reaching out to people, transparently explaining the migration and asking for permissions. But the good news is that these challenges are much less time-consuming to deal with than dealing with all aspects of such a migration manually.
+But it's not a silver bullet. It shifts the effort from implementing and writing code, to babysitting PRs with your own name on commits, and dealing with the operational overhead of reaching out to people, transparently explaining the migration and asking for permissions. But the good news is that these challenges are much less time-consuming to deal with than dealing with all aspects of such a migration manually.
 
 If you're facing a large-scale update or migration, the bottleneck isn't the code anymore, it's coordination and risk management. A friendly, contributors-first policy should be the norm. Let both humans and agents contribute effortlessly on all parts of your codebase and focus on implementing solid guardrails with robust human review checkpoints.
 
