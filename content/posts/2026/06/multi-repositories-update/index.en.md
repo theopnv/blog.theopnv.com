@@ -1,5 +1,5 @@
 ---
-title: "56 Repositories, 5 Hours and $80: How I Automated a Large-Scale Update with Claude"
+title: "56 Repositories, 5 Hours and $80: How I automated a large-scale update with AI"
 date: 2026-06-23T00:00:00+00:00
 tags: ["AI", "Automation"]
 categories: ["AI"]
