@@ -8,7 +8,7 @@
         { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=(), interest-cohort=()" },
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'self'; img-src 'self' data:; font-src 'self' https://assets.brevo.com; style-src 'self' 'unsafe-inline' https://sibforms.com; script-src 'self' 'unsafe-inline' https://sibforms.com https://challenges.cloudflare.com https://cloud.umami.is https://cdn.jsdelivr.net; connect-src 'self' https://cloud.umami.is https://gateway.umami.is https://challenges.cloudflare.com https://d1b06538.sibforms.com; frame-src https://challenges.cloudflare.com; form-action 'self' https://d1b06538.sibforms.com"
+          "value": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'self'; img-src 'self' data: https://giscus.app; font-src 'self' https://assets.brevo.com; style-src 'self' 'unsafe-inline' https://sibforms.com; script-src 'self' 'unsafe-inline' https://sibforms.com https://challenges.cloudflare.com https://cloud.umami.is https://cdn.jsdelivr.net https://giscus.app; connect-src 'self' https://cloud.umami.is https://gateway.umami.is https://challenges.cloudflare.com https://d1b06538.sibforms.com; frame-src https://challenges.cloudflare.com https://giscus.app; form-action 'self' https://d1b06538.sibforms.com"
         }
       ]
     }
