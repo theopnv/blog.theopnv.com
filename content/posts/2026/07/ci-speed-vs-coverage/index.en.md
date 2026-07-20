@@ -1,6 +1,6 @@
 ---
 title: "Testing speed vs coverage: how to stop choosing"
-date: 2026-06-30T00:00:00+00:00
+date: 2026-07-01T00:00:00+00:00
 tags: ["CI/CD", "Automation"]
 categories: ["CI/CD"]
 author: "Theo Penavaire"
@@ -41,10 +41,10 @@ It's tempting to brute-force this problem. Just spend more $ running more tests 
 ## What this series covers
 This is the first, short post of an upcoming series. Each part will analyse a single lever and how the wider industry has approached the same problem.
 
-1. **Validation tiers: run the right tests at the right stage**: catch failures as early and as cheaply as possible.
+1. [**Two CI strategies to keep main green: block bad changes, or land fast and chase failures**](posts/2026/07/blocking-vs-chasing-failures/): should you gate changes with a merge queue before they reach main, or let them land and rely on bisection and rollback to catch what slips through?
 2. **Smart Validation: test only what a change can affect**: instead of running everything, run the subset a change could actually break.
 3. **Batch landing & bisection: keep main green at scale**: when many PRs land at once, how merge queues test them together, pinpoint the culprit, and keep the mainline shippable.
 
-Each part stands on its own, but they compound: tiers give you the structure, smart triggers cut the cost of each tier, and batch landing keeps the whole thing green as your team grows.
+Each part stands on its own, but they compound: choosing where to draw the true head/green head line gives you the structure, smart triggers cut the cost of validating each change, and batch landing keeps the whole thing green as your team grows.
 
 _Part 1 lands next week. [Subscribe](https://blog.theopnv.com/newsletter/) if you'd like it in your inbox._
