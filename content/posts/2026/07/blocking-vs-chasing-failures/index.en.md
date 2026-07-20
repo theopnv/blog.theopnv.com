@@ -1,5 +1,5 @@
 ---
-title: "Two CI Strategies to Keep Main Green"
+title: "Two CI strategies to keep main green"
 date: 2026-07-20T00:00:00+00:00
 tags: ["CI/CD", "Automation"]
 categories: ["CI/CD"]
@@ -9,7 +9,7 @@ TocOpen: false
 draft: false
 hidemeta: false
 comments: true
-description: "Two CI/CD strategies to keep main green: block bad changes with a merge gate, or land them fast and chase failures with automated bisection and rollback."
+description: "A discussion on CI/CD strategies to keep main green: block bad changes with a merge gate, land them fast and chase failures with automated bisection and rollback, or blend both!"
 disableShare: false
 disableHLJS: false
 hideSummary: false
@@ -24,8 +24,8 @@ cover:
     relative: true
 ---
 
-## Cover more or deliver fast?
-[Last week](https://blog.theopnv.com/posts/2026/07/ci-speed-vs-coverage/) I laid out one of the CI/CD (Continuous Integration & Continuous Delivery) engineer dilemmas: cover more, or deliver fast. Brute-forcing both by throwing more machines at the problem works for a while, then stops working when the test suite runs for hours and rarely comes back green on the first try. But speed and coverage don't have to trade off against each other. All you need is listing your requirements (more on that later), in order to choose the best strategy.
+## Cover more or deliver faster?
+[Last week](https://blog.theopnv.com/posts/2026/07/ci-speed-vs-coverage/) I laid out one of the CI/CD (Continuous Integration & Continuous Delivery) engineer dilemmas: cover more, or deliver faster. Brute-forcing both by throwing more machines at the problem works for a while, then stops working when the test suite runs for hours and rarely comes back green on the first try. But speed and coverage don't have to trade off against each other. All you need is listing your requirements (more on that later), in order to choose the best strategy.
 
 Here I want to explore two of these, heavily inspired by:
 - How Continuous Integration is done at Google, explained in ["Software Engineering at Google: Lessons Learned from Programming Over Time"](https://www.oreilly.com/library/view/software-engineering-at/9781492082781/), written by Titus Winters, Tom Manshreck and Hyrum Wright
@@ -33,10 +33,12 @@ Here I want to explore two of these, heavily inspired by:
 - Some publicly available resources from the engineering blogs of [Airbnb](https://medium.com/airbnb-engineering/building-an-effective-test-pipeline-in-a-service-oriented-world-6968c513c6bd), Spotify and [Uber](https://www.uber.com/us/en/blog/bypassing-large-diffs-in-submitqueue/).
 
 Let's dive in!
+
 ## The gap between "true head" and "green head"
 Every software change starts as merely *written*. There's always some delay before the system can call it *verified*. Google calls the former "true head", and the latter "green head". When mapping that to a git setup, true head is the last change submitted, and green head is the one that has been validated against a suite of tests and showcases sufficient quality to be released.
 
 To address our coverage vs speed dilemma, an actionable question is: **how wide we let the gap between true and green heads be, and what we do to close it**. Let's explore two strategies and how they fit different teams' requirements.
+
 ## Strategy 1: Avoid the gap before it opens (confidence earlier)
 The contract for this strategy is: nothing lands until it's green (successful). There is no gap between the true and green heads, because the changes are verified before they land. 
 
@@ -56,11 +58,13 @@ A first checkpoint is developers running tests they deem relevant to validate th
 But the actual gate is coming when the changes are marked ready to land. Then all stable tests run against the changes and allow or block the landing.
 
 This strategy ensures a certain level of quality at all times because all tests are successful before anything reaches the main branch and is made available to customers, or even internally. This is building confidence early in the integration and deployment process, which considerably simplifies reasoning when compared to the second strategy we will discuss below.
+
 ### What "never break the tip" costs as you grow
 Here's the truth though: keeping the true and green heads perfectly pinned together gets more expensive as commit volume rises, because tests have to queue. 
 
 As Titus Winters (ex-Google) puts it: 
 >*"Having a 100% green rate on CI, just like having 100% uptime for a production service, is awfully expensive. If that is actually your goal, one of the biggest problems is going to be a race condition between testing and submission."*
+
 ### So is this the right strategy for your team?
 One way to find out is listing all the attributes of your current environment, your constraints and your requirements:
 - How many developers are in your team? How frequently do they commit changes? Do you anticipate a lot of growth soon?
@@ -74,6 +78,7 @@ One way to find out is listing all the attributes of your current environment, y
 	- As we will see down below, if you don't have the ability to catch issues fast after a change has landed, stick with strategy 1 and avoiding discrepancies between true and green heads.
 	
 If you don't recognise your team reading these lines just yet, don't worry. Let's explore a second strategy.
+
 ## Strategy 2: Let the gap trail and chase it down fast (confidence later)
 This is the test automation model Google describes in the [Continuous Integration](https://abseil.io/resources/swe-book/html/ch23.html) chapter (written by Rachel Tannenbaum) of their SWE book. At the time of book writing in 2020, this strategy allowed them to run an impressive 4 billion tests, against 50 thousand changes per day.
 
@@ -94,11 +99,13 @@ This works if reverting a change isn't treated as an accusation, a cultural pre-
 Some more complex CI systems such as [Uber's SubmitQueue](https://github.com/uber/submitqueue) embed conflict analysers that prevent entanglement in the first place, at the submit phase.
 
 A related requirement of this system is not to treat test failures as incidents, but to accept them as part of the system. Robust, reliable and possibly automated workflows must be built to handle reverting and tracking broken changes, bug hotlists and measuring how long cleanup takes.
+
 ### Shifting more errors left: monitoring and alerting
 Monitoring and alerting serve the same purpose as CI, according to Titus Winters: *"to identify problems as quickly as reasonably possible"*. 
 Charity Majors is also touching on this in ["Testing in Production: Why You Should Never Stop Doing It"](https://www.honeycomb.io/blog/testing-in-production), arguing that no testing or staging environment can replicate production 100%. You should embrace this to make your infrastructure anti-fragile. Because failures will happen in production eventually, the question is whether you are able to catch them early before they impact your customers, and whether you're able to act on them. Monitoring in production is one way to improve in this area, by building awareness.
 
 This idea does not mean that monitoring and alerting should replace testing, but that mature teams should invest in this area, even more when choosing this CI strategy. The good news is that investing there often goes hand-in-hand with improving other DORA capabilities and metrics such as enabling fast and reliable rollbacks whenever alerts are raised from production.
+
 ### Is this the right call for your team?
 Use the same list of requirements and constraints as for the first strategy, and evaluate them against each other:
 - Do you have a high commit volume? 
@@ -107,12 +114,14 @@ Use the same list of requirements and constraints as for the first strategy, and
 - Do you have an engineering culture that can tolerate the green head being briefly behind the true head without feeling like an incident?
 
 If you answered yes to most of these questions, "Chasing failures fast" would be a good, scalable strategy.
+
 ## Tools and incentives to keep CI efficient
 No matter the strategy, the overall efficiency of the system needs to be measured and optimised. Some tips to speed up testing at any point of the pipeline include:
 - As recommended by [the DORA report on Test Automation](https://dora.dev/capabilities/test-automation/), ordering the tests cheapest and most informative first, so an expensive job can be cancelled the moment a cheap one already failed (don't run edge case integration tests on platform B before compilation for platform A was verified). Knowledge of the slowest test dependency chains in your system, as well as following the test pyramid guidelines make it easy to know how to order tests:
 ![Test pyramid diagram showing tests ordered cheapest and most informative first, from compilation up to slow edge-case tests](images/test-pyramid-ordering.webp)
 - Another recommendation from the [DORA reports is to work in small batches](https://dora.dev/capabilities/working-in-small-batches/) (or in our context, with small changes). This needs to be paired with scoping tests to the changes. For example there's no need to run UI tests on backend changes. There is an inherent benefit to that, according to Adam Bender from Google:
 > 	*"The difference in waiting time between a change that triggers 100 tests and one that triggers 1,000 can be tens of minutes... engineers who want to spend less time waiting end up making smaller, targeted changes"* 
+
 ## Final thoughts
 There's really no one-size-fits-all when it comes to choosing a CI strategy. The main question, "how far apart do you let written (true) and verified (green) heads drift?" is yours to answer, depending on your environment constraints and requirements. Do you prefer to build confidence very strictly and early in the process, or to allow some controlled detection and recovery mechanism?
 
