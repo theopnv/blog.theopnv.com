@@ -8,7 +8,7 @@ showToc: true
 TocOpen: false
 draft: false
 hidemeta: false
-comments: false
+comments: true
 description: "Speed or coverage feels like a tradeoff. It need not be. A short series on testing strategies that buy you both."
 disableShare: false
 disableHLJS: false

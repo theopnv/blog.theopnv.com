@@ -11,7 +11,7 @@ showToc: true
 TocOpen: false
 draft: false
 hidemeta: false
-comments: false
+comments: true
 description: "Part 3/4: build a GraphQL API with Apollo Server and MongoDB, using GraphQL Code Generator to keep schema, types, and database models in sync."
 #canonicalURL: "https://canonical.url/to/page"
 disableShare: false

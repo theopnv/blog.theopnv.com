@@ -6,7 +6,7 @@ ShowReadingTime: false
 ShowBreadCrumbs: true
 ShowPostNavLinks: false
 disableShare: true
-comments: false
+comments: true
 ---
 
 Bonjour, je suis Theo Penavaire, consultant freelance SDET & Automation Engineering avec plus de 6 ans d'expérience.

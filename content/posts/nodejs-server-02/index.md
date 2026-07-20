@@ -11,7 +11,7 @@ showToc: true
 TocOpen: false
 draft: false
 hidemeta: false
-comments: false
+comments: true
 description: "Part 2/4: containerize the Node.js server and a MongoDB database with Docker and Docker Compose, then manage secrets with environment variables."
 #canonicalURL: "https://canonical.url/to/page"
 disableShare: false

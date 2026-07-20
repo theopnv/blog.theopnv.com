@@ -11,7 +11,7 @@ showToc: true
 TocOpen: false
 draft: false
 hidemeta: false
-comments: false
+comments: true
 description: "Arch Linux - XFCE configuration"
 #canonicalURL: "https://canonical.url/to/page"
 disableShare: false

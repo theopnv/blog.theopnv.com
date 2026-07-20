@@ -8,7 +8,7 @@ showToc: true
 TocOpen: false
 draft: false
 hidemeta: false
-comments: false
+comments: true
 description: "Tech giants and governments are converging on mass surveillance, from Chat Control to AI-powered facial scans. Why privacy is becoming a luxury."
 disableShare: false
 disableHLJS: false

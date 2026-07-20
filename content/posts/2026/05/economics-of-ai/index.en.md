@@ -8,7 +8,7 @@ showToc: true
 TocOpen: false
 draft: false
 hidemeta: false
-comments: false
+comments: true
 description: "AI threatens millions of jobs while political debate ignores it. Four economic models for the transition: bans, UBI taxes, token taxes, job-creation incentives."
 disableShare: false
 disableHLJS: false

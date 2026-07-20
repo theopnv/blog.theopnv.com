@@ -10,7 +10,7 @@ showToc: true
 TocOpen: false
 draft: false
 hidemeta: false
-comments: false
+comments: true
 description: "DDE 15.4 Review"
 disableShare: false
 disableHLJS: false

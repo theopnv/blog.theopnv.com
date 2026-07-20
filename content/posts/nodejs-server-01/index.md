@@ -11,7 +11,7 @@ showToc: true
 TocOpen: false
 draft: false
 hidemeta: false
-comments: false
+comments: true
 description: "Part 1/4: bootstrap a Node.js server with Koa.js and TypeScript, then add ESLint, Husky git hooks, and Nodemon for a clean development workflow."
 #canonicalURL: "https://canonical.url/to/page"
 disableShare: false

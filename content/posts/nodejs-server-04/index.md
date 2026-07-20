@@ -11,7 +11,7 @@ showToc: true
 TocOpen: false
 draft: false
 hidemeta: false
-comments: false
+comments: true
 description: "Part 4/4: test the Koa.js, GraphQL, and MongoDB server with Mocha and Chai, using an in-memory MongoDB instance to keep tests fast and isolated."
 #canonicalURL: "https://canonical.url/to/page"
 disableShare: false

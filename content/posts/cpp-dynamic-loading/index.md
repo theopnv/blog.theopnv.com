@@ -11,7 +11,7 @@ showToc: true
 TocOpen: false
 draft: false
 hidemeta: false
-comments: false
+comments: true
 description: "Loading of a C++ class from a shared library (Modern C++)"
 #canonicalURL: "https://canonical.url/to/page"
 disableShare: false

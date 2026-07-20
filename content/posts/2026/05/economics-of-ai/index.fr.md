@@ -8,7 +8,7 @@ showToc: true
 TocOpen: false
 draft: false
 hidemeta: false
-comments: false
+comments: true
 description: "L'IA menace des millions d'emplois, absente du débat politique. Quatre modèles pour la transition : interdire, taxer les Big Tech, taxer l'usage, créer de l'emploi."
 disableShare: false
 disableHLJS: false

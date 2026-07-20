@@ -8,7 +8,7 @@ showToc: true
 TocOpen: false
 draft: false
 hidemeta: false
-comments: false
+comments: true
 description: "Two CI/CD strategies to keep main green: block bad changes with a merge gate, or land them fast and chase failures with automated bisection and rollback."
 disableShare: false
 disableHLJS: false

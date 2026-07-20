@@ -8,7 +8,7 @@ showToc: true
 TocOpen: false
 draft: false
 hidemeta: false
-comments: false
+comments: true
 description: "A reproducible AI-assisted workflow for large-scale migrations."
 disableShare: false
 disableHLJS: false

@@ -17,7 +17,7 @@ showToc: true
 TocOpen: false
 draft: false
 hidemeta: false
-comments: false
+comments: true
 description: "<AUTHOR — 120–155 chars, includes primary keyword>"
 disableShare: false
 disableHLJS: false

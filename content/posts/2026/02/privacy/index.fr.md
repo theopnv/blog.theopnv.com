@@ -8,7 +8,7 @@ showToc: true
 TocOpen: false
 draft: false
 hidemeta: false
-comments: false
+comments: true
 description: "Big Tech et gouvernements convergent vers la surveillance de masse, du Chat Control aux scans faciaux dopés à l'IA. Pourquoi la vie privée devient un luxe."
 disableShare: false
 disableHLJS: false
