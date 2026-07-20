@@ -82,10 +82,10 @@ languages:
     languageName: Français
     params:
       footer:
-        text: "Écrit par [Theo Penavaire](/fr/about/)."
+        text: "Écrit par [Theo Penavaire](/fr/about/) · [Confidentialité](/fr/privacy/)."
   en:
     languageCode: en-US
     languageName: English
     params:
       footer:
-        text: "Written by [Theo Penavaire](/about/)."
+        text: "Written by [Theo Penavaire](/about/) · [Privacy](/privacy/)."

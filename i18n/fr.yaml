@@ -1,0 +1,5 @@
+- id: load_comments
+  translation: "Charger les commentaires"
+
+- id: load_comments_note
+  translation: "Ceci charge un widget GitHub Discussions depuis giscus.app, qui peut déposer des cookies."

@@ -6,3 +6,31 @@
 .giscus-frame {
     border: none !important;
 }
+
+.giscus-placeholder {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    text-align: center;
+}
+
+.giscus-load-btn {
+    font-size: 1rem;
+    padding: 0.5rem 1.25rem;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    background: var(--theme);
+    color: var(--primary);
+    cursor: pointer;
+}
+
+.giscus-load-btn:hover {
+    border-color: var(--primary);
+}
+
+.giscus-load-note {
+    margin: 0.75rem 0 0;
+    font-size: 0.85rem;
+    color: var(--secondary);
+}

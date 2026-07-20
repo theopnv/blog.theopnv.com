@@ -1,0 +1,5 @@
+- id: load_comments
+  translation: "Load comments"
+
+- id: load_comments_note
+  translation: "This embeds a GitHub Discussions widget from giscus.app, which may set cookies."

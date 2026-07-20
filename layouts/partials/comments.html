@@ -1,15 +1,26 @@
-<script src="https://giscus.app/client.js"
-        data-repo="theopnv/blog.theopnv.com"
-        data-repo-id="R_kgDOGr00NQ"
-        data-category="Announcements"
-        data-category-id="DIC_kwDOGr00Nc4DBkSa"
-        data-mapping="pathname"
-        data-strict="1"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="top"
-        data-theme="preferred_color_scheme"
-        data-lang="en"
-        crossorigin="anonymous"
-        async>
+<div class="giscus-placeholder">
+    <button type="button" class="giscus-load-btn" id="giscus-load-btn">
+        {{ i18n "load_comments" | default "Load comments" }}
+    </button>
+    <p class="giscus-load-note">{{ i18n "load_comments_note" | default "This embeds a GitHub Discussions widget from giscus.app, which may set cookies." }}</p>
+</div>
+<script>
+    document.getElementById("giscus-load-btn").addEventListener("click", function (event) {
+        var container = event.currentTarget.parentElement;
+        var script = document.createElement("script");
+        script.src = "https://giscus.app/client.js";
+        script.setAttribute("data-repo", "theopnv/blog.theopnv.com");
+        script.setAttribute("data-repo-id", "R_kgDOGr00NQ");
+        script.setAttribute("data-category", "Announcements");
+        script.setAttribute("data-category-id", "DIC_kwDOGr00Nc4DBkSa");
+        script.setAttribute("data-mapping", "pathname");
+        script.setAttribute("data-strict", "1");
+        script.setAttribute("data-reactions-enabled", "1");
+        script.setAttribute("data-emit-metadata", "0");
+        script.setAttribute("data-input-position", "top");
+        script.setAttribute("data-theme", "preferred_color_scheme");
+        script.setAttribute("data-lang", "{{ .Lang }}");
+        script.crossOrigin = "anonymous";
+        container.replaceWith(script);
+    }, { once: true });
 </script>

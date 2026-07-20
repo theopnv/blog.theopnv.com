@@ -295,14 +295,29 @@
   var AUTOHIDE = Boolean(0);
 </script>
 
+<script>
+  (function () {
+    var emailInput = document.getElementById("EMAIL");
+    if (!emailInput) return;
+    var loaded = false;
+    function loadFormScripts() {
+      if (loaded) return;
+      loaded = true;
+      var main = document.createElement("script");
+      main.defer = true;
+      main.src = "https://sibforms.com/forms/end-form/build/main.js";
+      document.body.appendChild(main);
 
-
-<script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
-
-
-
-<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
-
+      var turnstile = document.createElement("script");
+      turnstile.async = true;
+      turnstile.defer = true;
+      turnstile.src = "https://challenges.cloudflare.com/turnstile/v0/api.js";
+      document.body.appendChild(turnstile);
+    }
+    emailInput.addEventListener("focus", loadFormScripts, { once: true });
+    emailInput.addEventListener("input", loadFormScripts, { once: true });
+  })();
+</script>
 
 <!-- END - We recommend to place the above code in footer or bottom of your website html  -->
 
