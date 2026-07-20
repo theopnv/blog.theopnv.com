@@ -9,7 +9,7 @@ TocOpen: false
 draft: false
 hidemeta: false
 comments: true
-description: "A discussion on CI/CD strategies to keep main green: block bad changes with a merge gate, land them fast and chase failures with automated bisection and rollback, or blend both!"
+description: "A discussion on CI/CD strategies to keep main green: block bad changes with a merge gate, or land them fast and chase failures with automated bisection and rollback. Or blend both!"
 disableShare: false
 disableHLJS: false
 hideSummary: false
@@ -25,11 +25,11 @@ cover:
 ---
 
 ## Cover more or deliver faster?
-[Last week](https://blog.theopnv.com/posts/2026/07/ci-speed-vs-coverage/) I laid out one of the CI/CD (Continuous Integration & Continuous Delivery) engineer dilemmas: cover more, or deliver faster. Brute-forcing both by throwing more machines at the problem works for a while, then stops working when the test suite runs for hours and rarely comes back green on the first try. But speed and coverage don't have to trade off against each other. All you need is listing your requirements (more on that later), in order to choose the best strategy.
+[Last week](https://blog.theopnv.com/posts/2026/07/ci-speed-vs-coverage/) I laid out one of the CI/CD (Continuous Integration & Continuous Delivery) engineer dilemmas: cover more, or deliver faster. Brute-forcing both by throwing more machines at the problem works for a while, then stops working when the test suite runs for hours and rarely comes back green on the first try. But speed and coverage don't have to trade off against each other, and there are ways to speed up integration and delivery, while aiming for high quality. All you need is listing your requirements (more on that later), in order to choose the best strategy.
 
-Here I want to explore two of these, heavily inspired by:
+Here I want to explore two of these (there are certainly many others out there!), heavily inspired by:
 - How Continuous Integration is done at Google, explained in ["Software Engineering at Google: Lessons Learned from Programming Over Time"](https://www.oreilly.com/library/view/software-engineering-at/9781492082781/), written by Titus Winters, Tom Manshreck and Hyrum Wright
-- Some recommendations from the DORA program, which ["seeks to understand the capabilities that drive software delivery and operations performance"](https://dora.dev/).
+- Some recommendations from the [DORA program](https://dora.dev/capabilities/continuous-integration/), which ["seeks to understand the capabilities that drive software delivery and operations performance"](https://dora.dev/).
 - Some publicly available resources from the engineering blogs of [Airbnb](https://medium.com/airbnb-engineering/building-an-effective-test-pipeline-in-a-service-oriented-world-6968c513c6bd), Spotify and [Uber](https://www.uber.com/us/en/blog/bypassing-large-diffs-in-submitqueue/).
 
 Let's dive in!
@@ -39,7 +39,7 @@ Every software change starts as merely *written*. There's always some delay befo
 
 To address our coverage vs speed dilemma, an actionable question is: **how wide we let the gap between true and green heads be, and what we do to close it**. Let's explore two strategies and how they fit different teams' requirements.
 
-## Strategy 1: Avoid the gap before it opens (confidence earlier)
+## Strategy A: Avoid the gap before it opens (confidence earlier)
 The contract for this strategy is: nothing lands until it's green (successful). There is no gap between the true and green heads, because the changes are verified before they land. 
 
 ```mermaid
@@ -55,6 +55,7 @@ flowchart LR
 ```
 
 A first checkpoint is developers running tests they deem relevant to validate their changes (or better: automate the tests running so that developers unfamiliar with the codebase and unaware of their blast radius don't have to deal with the selection). 
+
 But the actual gate is coming when the changes are marked ready to land. Then all stable tests run against the changes and allow or block the landing.
 
 This strategy ensures a certain level of quality at all times because all tests are successful before anything reaches the main branch and is made available to customers, or even internally. This is building confidence early in the integration and deployment process, which considerably simplifies reasoning when compared to the second strategy we will discuss below.
@@ -79,7 +80,7 @@ One way to find out is listing all the attributes of your current environment, y
 	
 If you don't recognise your team reading these lines just yet, don't worry. Let's explore a second strategy.
 
-## Strategy 2: Let the gap trail and chase it down fast (confidence later)
+## Strategy B: Let the gap trail and chase it down fast (confidence later)
 This is the test automation model Google describes in the [Continuous Integration](https://abseil.io/resources/swe-book/html/ch23.html) chapter (written by Rachel Tannenbaum) of their SWE book. At the time of book writing in 2020, this strategy allowed them to run an impressive 4 billion tests, against 50 thousand changes per day.
 
 In this model the true head moves the instant something is submitted and the green head is wherever the test suite (Continuous Build, "CB" at Google) has finished verifying.
@@ -102,6 +103,7 @@ A related requirement of this system is not to treat test failures as incidents,
 
 ### Shifting more errors left: monitoring and alerting
 Monitoring and alerting serve the same purpose as CI, according to Titus Winters: *"to identify problems as quickly as reasonably possible"*. 
+
 Charity Majors is also touching on this in ["Testing in Production: Why You Should Never Stop Doing It"](https://www.honeycomb.io/blog/testing-in-production), arguing that no testing or staging environment can replicate production 100%. You should embrace this to make your infrastructure anti-fragile. Because failures will happen in production eventually, the question is whether you are able to catch them early before they impact your customers, and whether you're able to act on them. Monitoring in production is one way to improve in this area, by building awareness.
 
 This idea does not mean that monitoring and alerting should replace testing, but that mature teams should invest in this area, even more when choosing this CI strategy. The good news is that investing there often goes hand-in-hand with improving other DORA capabilities and metrics such as enabling fast and reliable rollbacks whenever alerts are raised from production.
