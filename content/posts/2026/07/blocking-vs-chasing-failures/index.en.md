@@ -24,8 +24,8 @@ cover:
     relative: true
 ---
 
-## Cover more or deliver faster?
-[Last week](https://blog.theopnv.com/posts/2026/07/ci-speed-vs-coverage/) I laid out one of the CI/CD (Continuous Integration & Continuous Delivery) engineer dilemmas: cover more, or deliver faster. Brute-forcing both by throwing more machines at the problem works for a while, then stops working when the test suite runs for hours and rarely comes back green on the first try. But speed and coverage don't have to trade off against each other, and there are ways to speed up integration and delivery, while aiming for high quality. All you need is listing your requirements (more on that later), in order to choose the best strategy.
+## The speed vs quality dilemma
+[Last week](https://blog.theopnv.com/posts/2026/07/ci-speed-vs-quality/) I laid out one of the CI/CD (Continuous Integration & Continuous Delivery) engineer dilemmas: cover more (improve quality), or deliver faster (improve speed). Brute-forcing both by throwing more machines at the problem works for a while, then stops working when the test suite runs for hours and rarely comes back green on the first try. But speed and quality don't have to trade off against each other, and there are ways to speed up integration and delivery, while aiming for high quality. All you need is listing your requirements (more on that later), in order to choose the best strategy.
 
 Here I want to explore two of these (there are certainly many others out there!), heavily inspired by:
 - How Continuous Integration is done at Google, explained in ["Software Engineering at Google: Lessons Learned from Programming Over Time"](https://www.oreilly.com/library/view/software-engineering-at/9781492082781/), written by Titus Winters, Tom Manshreck and Hyrum Wright
@@ -37,7 +37,7 @@ Let's dive in!
 ## The gap between "true head" and "green head"
 Every software change starts as merely *written*. There's always some delay before the system can call it *verified*. Google calls the former "true head", and the latter "green head". When mapping that to a git setup, true head is the last change submitted, and green head is the one that has been validated against a suite of tests and showcases sufficient quality to be released.
 
-To address our coverage vs speed dilemma, an actionable question is: **how wide we let the gap between true and green heads be, and what we do to close it**. Let's explore two strategies and how they fit different teams' requirements.
+To address our speed vs quality dilemma, an actionable question is: **how wide we let the gap between true and green heads be, and what we do to close it**. Let's explore two strategies and how they fit different teams' requirements.
 
 ## Strategy A: Avoid the gap before it opens (confidence earlier)
 The contract for this strategy is: nothing lands until it's green (successful). There is no gap between the true and green heads, because the changes are verified before they land. 
@@ -131,4 +131,4 @@ Importantly, choosing one or the other is neither a maturity ranking nor a binar
 
 One thing is sure: any mature strategy needs a reliable, strong underlying foundation: using git, trunk-based development and small changes. This discipline has been described again and again in the DORA reports, and is what unlocks landing changes quickly and continuously in an environment that's easy to reason about.
 
-_The next part of this [test automation series](posts/2026/07/ci-speed-vs-coverage) will land soon. [Subscribe](https://blog.theopnv.com/newsletter/) if you’d like it in your inbox._
+_The next part of this [test automation series](posts/2026/07/ci-speed-vs-quality) will land soon. [Subscribe](https://blog.theopnv.com/newsletter/) if you’d like it in your inbox._
