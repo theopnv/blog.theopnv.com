@@ -25,22 +25,22 @@ cover:
 ---
 
 ## The speed vs quality dilemma
-[Last week](https://blog.theopnv.com/posts/2026/07/ci-speed-vs-quality/) I laid out one of the CI/CD (Continuous Integration & Continuous Delivery) engineer dilemmas: cover more (improve quality), or deliver faster (improve speed). Brute-forcing both by throwing more machines at the problem works for a while, then stops working when the test suite runs for hours and rarely comes back green on the first try. But speed and quality don't have to trade off against each other, and there are ways to speed up integration and delivery, while aiming for high quality. All you need is listing your requirements (more on that later), in order to choose the best strategy.
+[Last week](https://blog.theopnv.com/posts/2026/07/ci-speed-vs-quality/) I laid out one of the CI/CD (Continuous Integration & Continuous Delivery) engineer dilemmas: improve quality with more test coverage, or improve the speed of delivery. Brute-forcing both by throwing more machines at the problem works for a while, then stops working when the test suite runs for hours and rarely comes back green on the first try. But speed and quality don't have to trade off against each other, and there are ways to speed up integration and delivery, while aiming for high quality. 
 
 Here I want to explore two of these (there are certainly many others out there!), heavily inspired by:
 - How Continuous Integration is done at Google, explained in ["Software Engineering at Google: Lessons Learned from Programming Over Time"](https://www.oreilly.com/library/view/software-engineering-at/9781492082781/), written by Titus Winters, Tom Manshreck and Hyrum Wright
 - Some recommendations from the [DORA program](https://dora.dev/capabilities/continuous-integration/), which ["seeks to understand the capabilities that drive software delivery and operations performance"](https://dora.dev/).
 - Some publicly available resources from the engineering blogs of [Airbnb](https://medium.com/airbnb-engineering/building-an-effective-test-pipeline-in-a-service-oriented-world-6968c513c6bd), Spotify and [Uber](https://www.uber.com/us/en/blog/bypassing-large-diffs-in-submitqueue/).
 
-Let's dive in!
+Choosing one or the other, or even blending, depends on the environment you work in, and on what you value. But let's dive in!
 
 ## The gap between "true head" and "green head"
 Every software change starts as merely *written*. There's always some delay before the system can call it *verified*. Google calls the former "true head", and the latter "green head". When mapping that to a git setup, true head is the last change submitted, and green head is the one that has been validated against a suite of tests and showcases sufficient quality to be released.
 
-To address our speed vs quality dilemma, an actionable question is: **how wide we let the gap between true and green heads be, and what we do to close it**. Let's explore two strategies and how they fit different teams' requirements.
+To address our speed vs quality dilemma, an actionable question is: **how wide do we let the gap between true and green heads be, and what do we do to close it?** Let's explore two possible answers for this question and how they fit different teams' requirements.
 
 ## Strategy A: Avoid the gap before it opens (confidence earlier)
-The contract for this strategy is: nothing lands until it's green (successful). There is no gap between the true and green heads, because the changes are verified before they land. 
+The contract for this strategy is: nothing lands until tests are successful (this is the "green" state). There is no gap between the true and green heads, because the changes are verified before they land. 
 
 ```mermaid
 flowchart LR
@@ -54,17 +54,19 @@ flowchart LR
     GATE -->|"any step fails: cancel the rest, fix, resubmit"| W
 ```
 
-A first checkpoint is developers running tests they deem relevant to validate their changes (or better: automate the tests running so that developers unfamiliar with the codebase and unaware of their blast radius don't have to deal with the selection). 
+A first testing checkpoint is developers running tests they deem relevant to validate their changes (or better: automate the tests running so that developers unfamiliar with the codebase and unaware of their blast radius don't have to deal with the selection). 
 
-But the actual gate is coming when the changes are marked ready to land. Then all stable tests run against the changes and allow or block the landing.
+But the actual gate is coming when the changes are marked ready to land by the developer. The system must then run all stable tests against the changes and allow or block the landing.
 
-This strategy ensures a certain level of quality at all times because all tests are successful before anything reaches the main branch and is made available to customers, or even internally. This is building confidence early in the integration and deployment process, which considerably simplifies reasoning when compared to the second strategy we will discuss below.
+This strategy ensures a certain level of quality (as good as your tests and coverage) at all times because all tests are successful before anything reaches the main branch and is made available to customers, or even internally. This is building confidence early in the integration and deployment process, which also considerably simplifies reasoning when compared to the second strategy we will discuss below.
 
 ### What "never break the tip" costs as you grow
 Here's the truth though: keeping the true and green heads perfectly pinned together gets more expensive as commit volume rises, because tests have to queue. 
 
 As Titus Winters (ex-Google) puts it: 
 >*"Having a 100% green rate on CI, just like having 100% uptime for a production service, is awfully expensive. If that is actually your goal, one of the biggest problems is going to be a race condition between testing and submission."*
+
+Flaky tests may cause a lot of reruns, and there may not be enough testing devices to accommodate the flow of changes coming every day, hour, minute.
 
 ### So is this the right strategy for your team?
 One way to find out is listing all the attributes of your current environment, your constraints and your requirements:
@@ -125,10 +127,10 @@ No matter the strategy, the overall efficiency of the system needs to be measure
 > 	*"The difference in waiting time between a change that triggers 100 tests and one that triggers 1,000 can be tens of minutes... engineers who want to spend less time waiting end up making smaller, targeted changes"* 
 
 ## Final thoughts
-There's really no one-size-fits-all when it comes to choosing a CI strategy. The main question, "how far apart do you let written (true) and verified (green) heads drift?" is yours to answer, depending on your environment constraints and requirements. Do you prefer to build confidence very strictly and early in the process, or to allow some controlled detection and recovery mechanism?
+There's really no one-size-fits-all when it comes to choosing a CI strategy. The main question, "how far apart do you let written (true) and verified (green) heads drift?" is yours to answer, depending on your environment constraints and requirements. Do you prefer to build confidence very strictly and early in the process, or to allow some controlled detection and recovery mechanism? Let's also acknowledge that most of the teams and codebases start using Strategy A organically, and only pause to think about a possibly more complex strategy like B later on, when they hit scale limitations. This is perfectly fine.
 
-Importantly, choosing one or the other is neither a maturity ranking nor a binary choice: a team choosing zero-gap isn't less advanced than one choosing trailing-gap. Furthermore, many teams blend strategies: zero-gap needs some monitoring, and "trailing" gap needs some presubmit tests for early signaling. 
+Because importantly, choosing one or the other is neither a maturity ranking nor a binary choice: a team choosing zero-gap isn't less advanced than one choosing trailing-gap. Furthermore, many teams blend strategies: zero-gap needs some monitoring, and trailing gap needs some presubmit tests for early signaling. 
 
-One thing is sure: any mature strategy needs a reliable, strong underlying foundation: using git, trunk-based development and small changes. This discipline has been described again and again in the DORA reports, and is what unlocks landing changes quickly and continuously in an environment that's easy to reason about.
+One thing is sure: any mature strategy needs a reliable, strong underlying foundation: using git, trunk-based development and small changes. This discipline has been described again and again in the DORA reports, and is what unlocks landing changes quickly, reliably and continuously in an environment that's easy to reason about.
 
 _The next part of this [test automation series](posts/2026/07/ci-speed-vs-quality) will land soon. [Subscribe](https://blog.theopnv.com/newsletter/) if you’d like it in your inbox._
