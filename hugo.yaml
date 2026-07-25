@@ -72,6 +72,10 @@ menu:
       name: About
       url: https://theopnv.com/
       weight: 50
+    - identifier: rss
+      name: RSS
+      url: /index.xml
+      weight: 60
 
 defaultContentLanguage: en
 defaultContentLanguageInSubdir: false
