@@ -43,5 +43,5 @@ cover:
   builds a responsive srcset at build time. After WebP conversion the extension here must
   match the actual file.
 - Existing tag/category vocabulary (check live before proposing): AI, Automation, Privacy,
-  Web, Tutorials, CI/CD, Economics, Git, OS, Linux, Events, Paris, Javascript, CPP,
+  Web, Tutorials, CI & CD, Economics, Git, OS, Linux, Events, Paris, Javascript, CPP,
   Productivity. Reuse before inventing.

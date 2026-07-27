@@ -1,8 +1,8 @@
 ---
 title: "Two CI strategies to keep main green"
 date: 2026-07-20T00:00:00+00:00
-tags: ["CI/CD", "Automation"]
-categories: ["CI/CD"]
+tags: ["CI & CD", "Automation"]
+categories: ["CI & CD"]
 author: "Theo Penavaire"
 showToc: true
 TocOpen: false

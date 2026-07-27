@@ -1,8 +1,8 @@
 ---
 title: "A short series on Test Automation"
 date: 2026-07-01T00:00:00+00:00
-tags: ["CI/CD", "Automation"]
-categories: ["CI/CD"]
+tags: ["CI & CD", "Automation"]
+categories: ["CI & CD"]
 author: "Theo Penavaire"
 showToc: true
 TocOpen: false
@@ -41,8 +41,9 @@ It's tempting to brute-force this problem. To just spend more $ running more tes
 **So when brute-forcing is not an option, what systems, workflows and culture can we establish to both improve the quality of the product or service, and its delivery speed?**
 
 ## What this series covers
-The online literature is prolific on the matter, and big tech companies' engineering blogs are full of answers. Each article of this series will focus on one area of test automation, building on top of the DORA studies but also the Google, Meta, Spotify, Uber, Airbnb, GitHub engineering blogs.
+The online literature is prolific on the matter, and big tech companies' engineering blogs are full of answers. Each article of this series will focus on one area of test automation, building on top of the DORA studies but also the Google, Meta, Spotify, Uber, Airbnb, GitHub engineering blogs:
 
-1. [**Two CI strategies to keep main green: block bad changes, or land fast and chase failures**](posts/2026/07/blocking-vs-chasing-failures/): should you gate changes with a merge queue before they reach main, or let them land and rely on bisection and rollback to catch what slips through?
+1. [Two CI strategies to keep main green: block bad changes, or land fast and chase failures](posts/2026/07/blocking-vs-chasing-failures/), where we explore _when_ to run tests. 
+2. [The tests you didn't need to run](posts/2026/07/scoping-tests/), where we assess _which_ tests to run.
 
 _[Subscribe](https://blog.theopnv.com/newsletter/) if you'd like the next parts in your inbox._

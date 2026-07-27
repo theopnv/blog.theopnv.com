@@ -59,7 +59,7 @@ validate against `references/frontmatter-template.md`:
 - **Taxonomy reuse.** Read the existing vocabulary before proposing tags:
   `ls content/tags content/categories` and
   `grep -rhoE 'tags: \[.*\]|categories: \[.*\]' content/posts/`. Prefer existing terms
-  (e.g. `CI/CD`, `Automation`, `AI`, `Privacy`, `Web`, `Tutorials`). If the post genuinely
+  (e.g. `CI & CD`, `Automation`, `AI`, `Privacy`, `Web`, `Tutorials`). If the post genuinely
   needs a new term, apply it but **call it out in the report** — every new tag spawns a
   thin taxonomy page, so net-new terms should be deliberate.
 - **`cover` block:** must exist with `image`, `alt`, and `relative: true`. If the author
