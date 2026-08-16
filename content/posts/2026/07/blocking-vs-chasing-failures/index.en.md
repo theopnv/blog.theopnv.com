@@ -42,6 +42,8 @@ To address our speed vs quality dilemma, an actionable question is: **how wide d
 ## Strategy A: Avoid the gap before it opens (confidence earlier)
 The contract for this strategy is: nothing lands until tests are successful (this is the "green" state). There is no gap between the true and green heads, because the changes are verified before they land. 
 
+It's the implementation of the "Not Rocket Science Rule of Software Engineering" rule coined by Graydon Hoare (the creator of Rust) and Ben Elliston: "Automatically maintain a repository of code that always passes all the tests."
+
 ```mermaid
 flowchart LR
     W["Change written"] --> D{{"On-demand checks<br/><small>developer-triggered</small>"}}
@@ -74,9 +76,9 @@ One way to find out is listing all the attributes of your current environment, y
 	- If your team is relatively small this strategy could be acceptable as the finite resources will not be in constant high demand. 
 	- Be aware this may become challenging entering an era where more and more AI agents contribute, which will increase the volume of changes by some orders of magnitude, even with a relatively flat number of human contributions.
 - What is your blast radius per change? 
-	- If your changes are scoped and tests are scoped to changes, this strategy could be acceptable as the number of tests per change will be limited.
+	- If your changes are scoped and [tests are scoped to changes](posts/2026/07/scoping-tests/), this strategy could be acceptable as the number of tests per change will be limited.
 - What are the regulatory and compliance constraints?
-	- If you don't require 100% green tests rate, this would also be acceptable. It would likely not for anything related to health or critical product or services.
+	- If you require 100% green tests rate, such as for anything related to healthcare or critical product or services, it's sometimes required to build maximal confidence early on. It is less important for not-so-critical services.
 - Finally, do you have rollback and monitoring maturity? 
 	- As we will see down below, if you don't have the ability to catch issues fast after a change has landed, stick with strategy 1 and avoiding discrepancies between true and green heads.
 	
@@ -123,13 +125,15 @@ If you answered yes to most of these questions, "Chasing failures fast" would be
 Whatever the strategy, you need to measure and optimize the overall efficiency of the system. Some tips to speed up testing at any point of the pipeline:
 - As recommended by [the DORA report on Test Automation](https://dora.dev/capabilities/test-automation/), ordering the tests cheapest and most informative first, so an expensive job can be cancelled the moment a cheap one already failed (don't run edge case integration tests on platform B before compilation for platform A was verified). Knowledge of the slowest test dependency chains in your system, as well as following the test pyramid guidelines make it easy to know how to order tests:
 ![Test pyramid diagram showing tests ordered cheapest and most informative first, from compilation up to slow edge-case tests](images/test-pyramid-ordering.webp)
-- Another recommendation from the [DORA reports is to work in small batches](https://dora.dev/capabilities/working-in-small-batches/) (or in our context, with small changes). This needs to be paired with scoping tests to the changes. For example there's no need to run UI tests on backend changes. There is an inherent benefit to that, according to Adam Bender from Google:
+- Another recommendation from the [DORA reports is to work in small batches](https://dora.dev/capabilities/working-in-small-batches/) (or in our context, with small changes). This needs to be paired with [scoping tests to the changes](posts/2026/07/scoping-tests/). For example there's no need to run UI tests on backend changes. There is an inherent benefit to that, according to Adam Bender from Google:
 > 	*"The difference in waiting time between a change that triggers 100 tests and one that triggers 1,000 can be tens of minutes... engineers who want to spend less time waiting end up making smaller, targeted changes"* 
 
 ## Final thoughts
-There's no one-size-fits-all CI strategy. The main question, "how far apart do you let written (true) and verified (green) heads drift?" is yours to answer, depending on your environment constraints and requirements. Do you prefer to build confidence very strictly and early in the process, or to allow some controlled detection and recovery mechanism? Let's also acknowledge that most of the teams and codebases start using Strategy A organically, and only pause to think about a possibly more complex strategy like B later on, when they hit scale limitations. This is perfectly fine.
+There's no one-size-fits-all CI strategy. The main question, "how far apart do you let written (true) and verified (green) heads drift?" is yours to answer, depending on your environment constraints and requirements. Do you prefer to build confidence very strictly and early in the process, or to allow some controlled detection and recovery mechanism? 
 
-Because importantly, choosing one or the other is neither a maturity ranking nor a binary choice: a team choosing zero-gap isn't less advanced than one choosing trailing-gap. Furthermore, many teams blend strategies: zero-gap needs some monitoring, and trailing gap needs some presubmit tests for early signaling. 
+Let's also acknowledge that most of the teams and codebases start using Strategy A organically, and only pause to think about a possibly more complex strategy like B later on, when they hit scale limitations. This is perfectly fine.
+
+Because importantly, choosing one or the other is neither a maturity ranking nor a binary choice: a team choosing zero-gap isn't less advanced than one choosing trailing-gap. Furthermore, many teams blend strategies: zero-gap still needs some monitoring in production, and trailing gap needs some presubmit tests for early signaling. 
 
 One thing is sure: any mature strategy needs a reliable, strong underlying foundation: using git, trunk-based development and small changes. This discipline has been described again and again in the DORA reports, and is what unlocks landing changes quickly, reliably and continuously in an environment that's easy to reason about.
 
