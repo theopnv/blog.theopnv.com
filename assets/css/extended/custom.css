@@ -34,3 +34,10 @@
     font-size: 0.85rem;
     color: var(--secondary);
 }
+
+/* Buy Me a Coffee widget sits bottom-right with the same 18px margins the
+   theme's own "back to top" link uses, so push the latter further up to
+   keep the two from overlapping. */
+.top-link {
+    bottom: 130px;
+}
