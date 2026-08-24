@@ -9,7 +9,7 @@ TocOpen: false
 draft: false
 hidemeta: false
 comments: true
-description: "Latency or correctness sometimes feels like a tradeoff. It doesn't have to be: research shows the two correlate. This is a short series on test automation strategies that buy you both."
+description: "Speed and stability often feel like a tradeoff. But they don't have to be: DORA research shows the two correlate. This is a short series on test automation strategies that buy you both."
 disableShare: false
 disableHLJS: false
 hideSummary: false
@@ -27,7 +27,7 @@ cover:
 ## The Test Automation Engineer dilemma
 Your company is growing (yay!). You have more customers. You add more features and support more use cases. You can't afford breakages and downtimes anymore, so you decide to improve the robustness and quality of your testing. 
 In parallel, supporting your growth means hiring more developers, who need to ship fast, with early feedback and limited context-switch, while also sharing a pool of finite test and deploy resources. 
-Integrating and deploying faster (latency) vs increasing test coverage (correctness) is often the dilemma Test Automation Engineers face in such cases.
+Integrating and deploying faster (speed, latency) vs increasing test coverage (stability and correctness) is often the dilemma Test Automation Engineers face in such cases.
 
 The premise of this series: you don't actually have to choose. Years of [DORA research](https://dora.dev/) (a program seeking to "understand the capabilities that drive software delivery and operations performance") across hundreds of teams found that speed and stability are _not_ a tradeoff: they move together. The highest-performing teams ship both faster _and_ more reliably. They get there by choosing the right strategy.
 
