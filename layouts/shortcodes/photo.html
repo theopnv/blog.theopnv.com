@@ -1,0 +1,7 @@
+{{- with .Page.Resources.GetMatch (.Get "src") -}}
+<figure>
+    <img src="{{ .RelPermalink }}" alt="{{ $.Get "alt" }}" width="{{ $.Get "width" }}" loading="lazy">
+</figure>
+{{- else -}}
+    {{- errorf "Missing photo resource: %s" (.Get "src") -}}
+{{- end -}}
