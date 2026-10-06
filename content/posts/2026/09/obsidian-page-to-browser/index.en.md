@@ -1,5 +1,5 @@
 ---
-title: "Reading Obsidian notes in your browser, without publishing them"
+title: "Read Obsidian notes in your browser, without publishing them"
 date: 2026-09-09T00:00:00+00:00
 tags: ["Obsidian", "Productivity", "Tools"]
 categories: ["Tools"]
