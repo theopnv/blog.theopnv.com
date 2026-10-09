@@ -20,7 +20,7 @@ ShowReadingTime: true
 ShowBreadCrumbs: true
 ShowPostNavLinks: true
 cover:
-    image: "images/desktop.png" # image path/url
+    image: "images/desktop.fr.png" # image path/url
     alt: "DDE 15.4 Desktop" # alt text
     relative: true # when using page bundles set this to true
 ---

@@ -83,11 +83,7 @@
 {{- end }}
 {{- end }}
 
-{{- if eq .Site.Language.Lang "fr" }}
-{{- partial "newsletter.fr.html" . }}
-{{- else }}
 {{- partial "newsletter.en.html" . }}
-{{- end }}
 
 {{- else }}
 
